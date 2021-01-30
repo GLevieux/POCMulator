@@ -836,3 +836,34 @@ System memory in use after: 113.6 MB.
 Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2907.
 Total: 3.769400 ms (FindLiveObjects: 0.252400 ms CreateObjectMapping: 0.124600 ms MarkObjects: 1.661200 ms  DeleteObjects: 1.730300 ms)
 
+========================================================================
+Received Prepare
+The file 'UserSettings/EditorUserSettings.asset' seems to have merge conflicts. Please open it in a text editor and fix the merge.
+
+Trying to reload asset but can't find object on disk
+
+Registering precompiled user dll's ...
+Registered in 0.001220 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.757 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2909.
+Total: 2.978300 ms (FindLiveObjects: 0.346200 ms CreateObjectMapping: 0.103600 ms MarkObjects: 1.393400 ms  DeleteObjects: 1.133600 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
