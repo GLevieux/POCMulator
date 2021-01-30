@@ -6,7 +6,10 @@ public class MusicPlaylist : MonoBehaviour
 {
     public AudioClip[] myMusic;
     AudioClip[] playedMusic;
+
     bool playerWantsMusic = true;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +17,9 @@ public class MusicPlaylist : MonoBehaviour
         if(!GetComponent<AudioSource>().playOnAwake)
         {
             GetComponent<AudioSource>().clip = myMusic[Random.Range(0, myMusic.Length)];
+            GetComponent<AudioSource>().loop = true;
             GetComponent<AudioSource>().Play();
+
         }
     }
 
@@ -24,6 +29,7 @@ public class MusicPlaylist : MonoBehaviour
         if (!GetComponent<AudioSource>().isPlaying && playerWantsMusic == true)
         {
             GetComponent<AudioSource>().clip = myMusic[Random.Range(0, myMusic.Length)];
+            GetComponent<AudioSource>().loop = true;
             GetComponent<AudioSource>().Play();
 
         }
@@ -46,6 +52,11 @@ public class MusicPlaylist : MonoBehaviour
         //restart radio
         if (!GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.V) && (playerWantsMusic == false))
         playerWantsMusic = true;
+
+    }
+
+    void MusicSelection()
+    {
 
     }
 }
