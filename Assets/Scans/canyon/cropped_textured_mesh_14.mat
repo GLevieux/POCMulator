@@ -96,14 +96,16 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NbHue: 15
-    - _NbSat: 3
-    - _NbVal: 11.59
+    - _NbHue: 100
+    - _NbSat: 100
+    - _NbVal: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _ScreenStep: 20
+    - _ScreenStepDepth: 0.2
+    - _ScreenStepScaleFactor: 8
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
