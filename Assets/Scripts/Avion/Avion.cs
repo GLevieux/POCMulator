@@ -15,7 +15,6 @@ public class Avion : MonoBehaviour
     [SerializeField] private Slider leftEngineThruster;
     [SerializeField] private Slider rightEngineThruster;
     [SerializeField] private Slider verticalEngineThruster;
-    [SerializeField] private Text liftForceText;
     [SerializeField] private float maxThrust;
     [SerializeField] private float minVelocityLiftForce;
     [SerializeField] private float maxLiftForce;
@@ -118,7 +117,7 @@ public class Avion : MonoBehaviour
 
     private void UpdateUI()
     {
-        liftForceText.text = currentLiftForce.ToString();
+        
     }
 
     public void SetLeftEngineThrust(float value)
