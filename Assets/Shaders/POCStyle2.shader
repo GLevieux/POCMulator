@@ -4,15 +4,18 @@ Shader "Unlit/POCStyle2"
     {
         _BaseMap("Texture", 2D) = "white" {}
         _Ramp("Ramp", 2D) = "white" {}
-        _NbHue("Nb Hue", Int) = 15
-        _NbSat("Nb Sat", Int) = 3
+        _NbHue("Nb Hue", Int) = 100
+        _NbSat("Nb Sat", Int) = 100
         _NbVal("Nb Val", Int) = 3
         _ScreenStep("Screen Step", Int) = 20
+        _ScreenStepDepth("Screen Step Depth", Range(0, 1)) = 0.2
+        _ScreenStepScaleFactor("Screen Scale Factor", Range(0, 300)) = 8
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
+          Cull off
 
         Pass
         {
@@ -44,6 +47,8 @@ Shader "Unlit/POCStyle2"
               int _NbSat;
               int _NbVal;
               int _ScreenStep;
+              float _ScreenStepDepth;
+              float _ScreenStepScaleFactor;
 
             float3 RGBToHSV(float3 c)
             {
@@ -73,8 +78,10 @@ Shader "Unlit/POCStyle2"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.vertex.x = stepVal(o.vertex.x, _ScreenStep);
-                o.vertex.y = stepVal(o.vertex.y, _ScreenStep);
+                float norm = _ScreenStepScaleFactor + o.vertex.w* _ScreenStepDepth;
+                o.colOut = float4(abs(o.vertex.z/norm), 0, 0, 1);
+                o.vertex.x = stepVal(o.vertex.x/ norm, _ScreenStep )* norm;
+                o.vertex.y = stepVal(o.vertex.y/ norm, _ScreenStep )* norm;
                 o.uv = TRANSFORM_TEX(v.uv, _BaseMap);
                 /*float4 col = tex2Dlod(_BaseMap, float4(v.uv,0,0));
 
