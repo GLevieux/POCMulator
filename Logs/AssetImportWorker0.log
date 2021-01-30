@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.685; Version 2009; 64bit' Language: 'fr' Physical Memory: 16244 MB
+OS: 'Windows 10 Home; OS build 18363.1350; Version 1909; 64bit' Language: 'en' Physical Memory: 16338 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,125 +11,610 @@ C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/galev/Documents/GitHub/POCMulator
+C:/Users/Toto/Documents/GitHub/POCMulator
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61859
-Successfully changed project path to: C:/Users/galev/Documents/GitHub/POCMulator
-C:/Users/galev/Documents/GitHub/POCMulator
+53965
+Successfully changed project path to: C:/Users/Toto/Documents/GitHub/POCMulator
+C:/Users/Toto/Documents/GitHub/POCMulator
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 36.96 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 51.98 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/galev/Documents/GitHub/POCMulator/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Toto/Documents/GitHub/POCMulator/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2070 Super with Max-Q Design (ID=0x1e91)
+    Renderer: NVIDIA GeForce GTX 1080 with Max-Q Design (ID=0x1be0)
     Vendor:   
-    VRAM:     8011 MB
-    Driver:   26.21.14.4345
+    VRAM:     8079 MB
+    Driver:   27.21.14.6140
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56668
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56980
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002214 seconds.
+Registered in 0.001890 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 40.54 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 68.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.078 seconds
+- Completed reload, in  2.115 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001373 seconds.
+Registered in 0.001402 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 38.92 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 48.91 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.854 seconds
+- Completed reload, in  1.201 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2397 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2396 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 111.2 MB.
-System memory in use after: 109.1 MB.
+System memory in use after: 111.4 MB.
 
-Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2804.
-Total: 3.535400 ms (FindLiveObjects: 0.427300 ms CreateObjectMapping: 0.317000 ms MarkObjects: 1.715300 ms  DeleteObjects: 1.074900 ms)
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2836.
+Total: 2.940500 ms (FindLiveObjects: 0.316400 ms CreateObjectMapping: 0.127000 ms MarkObjects: 2.374200 ms  DeleteObjects: 0.121800 ms)
 
 ========================================================================
 Received Import Request.
   path: Assets/Scenes/Main.unity
   artifactKey: Guid(203da371cd815c441890bae436c5d688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Main.unity using Guid(203da371cd815c441890bae436c5d688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '630877ba94d77e01a1cbbe2bac19b033') in 0.015666 seconds
-  Import took 0.019505 seconds .
+Start importing Assets/Scenes/Main.unity using Guid(203da371cd815c441890bae436c5d688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26191a7d92a6a1d88f790dd02ca834a6') in 0.019738 seconds
+  Import took 0.023907 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 35.814330 seconds.
-  path: Assets
-  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a6e520b92ccfc61bcfa21a7bcab8468') in 0.006526 seconds
-  Import took 0.019535 seconds .
+  Time since last request: 4.928973 seconds.
+  path: Assets/Presets/AudioCompressedInMemory.preset
+  artifactKey: Guid(2dd802e4d37c65149922028d3e973832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Presets/AudioCompressedInMemory.preset using Guid(2dd802e4d37c65149922028d3e973832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3954cc6f63e1531f9b28df449cc14a15') in 0.028343 seconds
+  Import took 0.032336 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.052265 seconds.
-  path: Assets/Scans
-  artifactKey: Guid(316bb8b5b89e72746aa1ee83ee4978c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scans using Guid(316bb8b5b89e72746aa1ee83ee4978c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8af1dabea1a52075d9d9b335945c80b1') in 0.007979 seconds
-  Import took 0.011904 seconds .
+  Time since last request: 0.000312 seconds.
+  path: Assets/Presets/AudioStreaming.preset
+  artifactKey: Guid(86bcce7f5575b54408aa0f3a7d321039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Presets/AudioStreaming.preset using Guid(86bcce7f5575b54408aa0f3a7d321039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b69dc202892b483fb3acf4e409047d') in 0.008528 seconds
+  Import took 0.012437 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 145.425628 seconds.
+  Time since last request: 0.000297 seconds.
+  path: Assets/Presets/NormalTexture.preset
+  artifactKey: Guid(14a57cf3b9fa1c74b884aa7e0dcf1faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Presets/NormalTexture.preset using Guid(14a57cf3b9fa1c74b884aa7e0dcf1faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb2d0667f503c7ca32a114c57c7500fc') in 0.011499 seconds
+  Import took 0.015498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000341 seconds.
+  path: Assets/Presets/UtilityTexture.preset
+  artifactKey: Guid(45f7b2e3c78185248b3adbb14429c2ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Presets/UtilityTexture.preset using Guid(45f7b2e3c78185248b3adbb14429c2ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f48291c0132b3e3dd92b3ef10dd4113') in 0.011260 seconds
+  Import took 0.015686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.160703 seconds.
+  path: Assets/Materials/Skybox_Mat.mat
+  artifactKey: Guid(0ffaa0b7117ba8c47a9d05ae701d4b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Skybox_Mat.mat using Guid(0ffaa0b7117ba8c47a9d05ae701d4b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b93c2898d13f58126a3c9bd71fd34d7b') in 0.337634 seconds
+  Import took 0.342599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.308788 seconds.
   path: Assets/Scans/29 Jan at 7 44 PM-dae_poly
   artifactKey: Guid(62060e4796102f046910ae5a16b2f415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly using Guid(62060e4796102f046910ae5a16b2f415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec2ba3ac3f12a33186305ae3052d547') in 0.007377 seconds
-  Import took 0.012928 seconds .
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly using Guid(62060e4796102f046910ae5a16b2f415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e139f06bef5cf0060eaef6c7f061e772') in 0.007717 seconds
+  Import took 0.012470 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.587702 seconds.
+  Time since last request: 0.061258 seconds.
   path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/29 Jan at 7_44 PM-poly.dae
   artifactKey: Guid(89e7ccaee81063f44b13f135885cea22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/29 Jan at 7_44 PM-poly.dae using Guid(89e7ccaee81063f44b13f135885cea22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fc5478581a0eb03eabfdfff43a7d202') in 0.601684 seconds
-  Import took 0.608052 seconds .
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/29 Jan at 7_44 PM-poly.dae using Guid(89e7ccaee81063f44b13f135885cea22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85ea67c040a0ae90676c12900d00fda6') in 0.438395 seconds
+  Import took 0.445602 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.795682 seconds.
-  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/29 Jan at 7_44 PM-poly.dae
-  artifactKey: Guid(89e7ccaee81063f44b13f135885cea22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/29 Jan at 7_44 PM-poly.dae using Guid(89e7ccaee81063f44b13f135885cea22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67c8302386142e7857bf422c15acebf3') in 0.070177 seconds
-  Import took 0.076979 seconds .
+  Time since last request: 0.000352 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0014.mat
+  artifactKey: Guid(f85cefc754dd031489df458cb87c25ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0014.mat using Guid(f85cefc754dd031489df458cb87c25ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baeaf8b33c646d27de873ad4b4c42b05') in 0.028547 seconds
+  Import took 0.032840 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 221.080968 seconds.
-  path: Assets/Scripts
-  artifactKey: Guid(02a3527b6b33a924e8ec66aa805ea717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts using Guid(02a3527b6b33a924e8ec66aa805ea717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '924e43eeedbc414cd7a4a7272521ccfb') in 0.008331 seconds
-  Import took 0.012539 seconds .
+  Time since last request: 0.000395 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0016.mat
+  artifactKey: Guid(f097527afaf284140971527fb4052cc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0016.mat using Guid(f097527afaf284140971527fb4052cc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '886bab6dc27a5eb92295084fa3a847b2') in 0.023628 seconds
+  Import took 0.027681 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0007_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(08de7d3df58eaf5449c0373bb3dbfc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0007_nU4B1ut0_map_Kd.jpg using Guid(08de7d3df58eaf5449c0373bb3dbfc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f480a56d9d6167da0943964b1d127f3') in 0.071026 seconds
+  Import took 0.074998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0003.mat
+  artifactKey: Guid(422ee67878e296641a169101d2eddc54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0003.mat using Guid(422ee67878e296641a169101d2eddc54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fe8a87b2507df81cc1aaa1ac069b5c7') in 0.031403 seconds
+  Import took 0.035100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0006.mat
+  artifactKey: Guid(c0af4218101f9e04bb8ba17785bb6e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0006.mat using Guid(c0af4218101f9e04bb8ba17785bb6e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32977ab291110c778be98d1e36ccd718') in 0.025568 seconds
+  Import took 0.030781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0018.mat
+  artifactKey: Guid(b61a5b614c712f24f9da0888f6bbab2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0018.mat using Guid(b61a5b614c712f24f9da0888f6bbab2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b80ffb2df661fe421c3c2157b02571ba') in 0.030236 seconds
+  Import took 0.036595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0002_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(c16029c00d7bef1429a61a6b8d4da29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0002_nU4B1ut0_map_Kd.jpg using Guid(c16029c00d7bef1429a61a6b8d4da29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '466c7a0b5fcdec100756fe4e3b335bfb') in 0.026306 seconds
+  Import took 0.032259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0024.mat
+  artifactKey: Guid(17ce49dbbfb4f2a4ca80515033bd50ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0024.mat using Guid(17ce49dbbfb4f2a4ca80515033bd50ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c52c11223c6ff0f5dd35e7eb6f690af') in 0.028544 seconds
+  Import took 0.034339 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0016_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(2d4c4e7c393405b4e96c56ec075bdeda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0016_nU4B1ut0_map_Kd.jpg using Guid(2d4c4e7c393405b4e96c56ec075bdeda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac75136c859128e97c31fc3c7a4a6c58') in 0.021918 seconds
+  Import took 0.027326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0017_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(64aea356a55654e4698d6211bdf0de28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0017_nU4B1ut0_map_Kd.jpg using Guid(64aea356a55654e4698d6211bdf0de28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9474126ee21c7041d1edbe15563a8d7') in 0.032050 seconds
+  Import took 0.037332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0000.mat
+  artifactKey: Guid(42b483eca8e88c743b480e1d6c055d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0000.mat using Guid(42b483eca8e88c743b480e1d6c055d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cd9cc8a62c099436f8cd701219242ff') in 0.033384 seconds
+  Import took 0.038998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0011.mat
+  artifactKey: Guid(f56a9c66dd08bb049a287c711935b326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0011.mat using Guid(f56a9c66dd08bb049a287c711935b326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '035aeec050815273fdd3f3dbed68cedf') in 0.020612 seconds
+  Import took 0.024585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0004_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(6132d7ebe849b36498467ccb1558e309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0004_nU4B1ut0_map_Kd.jpg using Guid(6132d7ebe849b36498467ccb1558e309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98f5bfef4b42c1a4fec41a20ae5578e2') in 0.022618 seconds
+  Import took 0.027201 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0019_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(405eb6044dade9f41adeb80d5f57872b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0019_nU4B1ut0_map_Kd.jpg using Guid(405eb6044dade9f41adeb80d5f57872b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe0bc91b06c8f9ca773b2c15c03f3386') in 0.030716 seconds
+  Import took 0.036890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0021.mat
+  artifactKey: Guid(a9998556268ea0b44a40fb1e8ddfc486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0021.mat using Guid(a9998556268ea0b44a40fb1e8ddfc486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2f2f31de4d5d74fc27da4cb1418607f') in 0.023834 seconds
+  Import took 0.028812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0021_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(5aab399fcf01d6b4cbda876fe261eac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0021_nU4B1ut0_map_Kd.jpg using Guid(5aab399fcf01d6b4cbda876fe261eac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f8dc42ed689472728fc8dd1fa87a7c2') in 0.017083 seconds
+  Import took 0.021355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0003_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(6563adc8420e37347a2e7c02061b03c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0003_nU4B1ut0_map_Kd.jpg using Guid(6563adc8420e37347a2e7c02061b03c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac86dce5a49411e678b63b71eb4b9ed6') in 0.025675 seconds
+  Import took 0.030329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0005.mat
+  artifactKey: Guid(e219e7148efeb124392f0f32462c43e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0005.mat using Guid(e219e7148efeb124392f0f32462c43e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c31b507a7e526d18b4fe915e94408320') in 0.023606 seconds
+  Import took 0.029490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0011_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(5ac74d255a0585e449f2665227b5dcc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0011_nU4B1ut0_map_Kd.jpg using Guid(5ac74d255a0585e449f2665227b5dcc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a6c793605f1a16428d2dee3054a6681') in 0.018406 seconds
+  Import took 0.022505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0001.mat
+  artifactKey: Guid(c58d682ff0830924bb1a387d0a05e7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0001.mat using Guid(c58d682ff0830924bb1a387d0a05e7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13738048d1cc2b83d8f828d6c520ca22') in 0.025100 seconds
+  Import took 0.029902 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0020.mat
+  artifactKey: Guid(4adc5c4c5bd21be4288ed4b3c4e77823) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0020.mat using Guid(4adc5c4c5bd21be4288ed4b3c4e77823) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f5c893f633898b18a2da0d823f11f79') in 0.019456 seconds
+  Import took 0.024398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0005_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(3169a803600bdaa4ab671f908f285300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0005_nU4B1ut0_map_Kd.jpg using Guid(3169a803600bdaa4ab671f908f285300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '503c0719187950475bb1b31f3b8c14b5') in 0.021300 seconds
+  Import took 0.026267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0019.mat
+  artifactKey: Guid(c2b1353d83fad4a4f878c8f59067d0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0019.mat using Guid(c2b1353d83fad4a4f878c8f59067d0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c912330b0b56bf216724f309ee49cf1b') in 0.022494 seconds
+  Import took 0.027950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0017.mat
+  artifactKey: Guid(52d5f0e51bcb1084f8b9b6562cdc7da6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0017.mat using Guid(52d5f0e51bcb1084f8b9b6562cdc7da6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f27b65bb1162c6c150d52d1de2f03c52') in 0.027894 seconds
+  Import took 0.033447 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0010.mat
+  artifactKey: Guid(16155ef77309ae442a085172feaf3d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0010.mat using Guid(16155ef77309ae442a085172feaf3d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b5e906e8e284a1c0c17fff44b6efb0') in 0.027212 seconds
+  Import took 0.032851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0015_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(10c6bfdf25ff41b4db429065acdcab1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0015_nU4B1ut0_map_Kd.jpg using Guid(10c6bfdf25ff41b4db429065acdcab1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a08d2ccde5d4b1d0e8ef78859d2996') in 0.023579 seconds
+  Import took 0.031677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000445 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0010_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(05ccf6a5f44cbaf43b7168149dec0760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0010_nU4B1ut0_map_Kd.jpg using Guid(05ccf6a5f44cbaf43b7168149dec0760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb194ceb53af4f7a1b76510be79d7cf2') in 0.026422 seconds
+  Import took 0.032690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0002.mat
+  artifactKey: Guid(980846efb6973bd4f979e17c92b983fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0002.mat using Guid(980846efb6973bd4f979e17c92b983fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '960a84625a86431b8b892a96652ffd71') in 0.027280 seconds
+  Import took 0.031838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0007.mat
+  artifactKey: Guid(306e7e35d4c72b34494939ccf0ac7628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0007.mat using Guid(306e7e35d4c72b34494939ccf0ac7628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdc1dad2dd39d380ded99778829ad2ab') in 0.029984 seconds
+  Import took 0.034075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0023.mat
+  artifactKey: Guid(bfea57c9cd1a02144842ab0da34482d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0023.mat using Guid(bfea57c9cd1a02144842ab0da34482d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41c7985105897a7ad862c69be587fea9') in 0.022215 seconds
+  Import took 0.027159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0013.mat
+  artifactKey: Guid(5454a02aaa5027c4280511f95cee1d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0013.mat using Guid(5454a02aaa5027c4280511f95cee1d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc085d602fe0c9638176181f0da399a7') in 0.020619 seconds
+  Import took 0.024326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0009.mat
+  artifactKey: Guid(da2265f190594bb48909751a7c926ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0009.mat using Guid(da2265f190594bb48909751a7c926ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '251389c15eb7d856bdf2fe6390505913') in 0.022883 seconds
+  Import took 0.027244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0000_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(010b464358b387447b42f8cf61d65d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0000_nU4B1ut0_map_Kd.jpg using Guid(010b464358b387447b42f8cf61d65d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb591b76b4712dfab3529b68c2421e29') in 0.023207 seconds
+  Import took 0.026973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0014_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(b6ff70735f639ba4e89ab10f41cd6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0014_nU4B1ut0_map_Kd.jpg using Guid(b6ff70735f639ba4e89ab10f41cd6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a6a4d8035fbe1f839b2f861857e1d02') in 0.017389 seconds
+  Import took 0.021455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0004.mat
+  artifactKey: Guid(b1f8393c8b50f8a4e88643815ee26473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0004.mat using Guid(b1f8393c8b50f8a4e88643815ee26473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d293f6e50991c55919512aa74c1d329') in 0.023371 seconds
+  Import took 0.027085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0013_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(dedc78d07934df84cb545c09e564604d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0013_nU4B1ut0_map_Kd.jpg using Guid(dedc78d07934df84cb545c09e564604d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '006cd9011399652b358d457dc4feb2d0') in 0.017333 seconds
+  Import took 0.021348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0004.mat
+  artifactKey: Guid(b1f8393c8b50f8a4e88643815ee26473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0004.mat using Guid(b1f8393c8b50f8a4e88643815ee26473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d293f6e50991c55919512aa74c1d329') in 0.019156 seconds
+  Import took 0.024539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0018_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(62936a3f0f52784489469c9da24904bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0018_nU4B1ut0_map_Kd.jpg using Guid(62936a3f0f52784489469c9da24904bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67656e26b8b4a1176f0bed6a73d80279') in 0.020106 seconds
+  Import took 0.025868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0020_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(fa928db8488890740b91bbec2a6375b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0020_nU4B1ut0_map_Kd.jpg using Guid(fa928db8488890740b91bbec2a6375b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae313161702dd109e6d6021e2e8d12b0') in 0.024979 seconds
+  Import took 0.032493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0015.mat
+  artifactKey: Guid(df729523f889b634f97ace2d3d0627c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0015.mat using Guid(df729523f889b634f97ace2d3d0627c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca23f2daeb6ffbcb9a092b0528d509f6') in 0.029876 seconds
+  Import took 0.037688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0022.mat
+  artifactKey: Guid(6e5a8b310d499ce49aad08840a73b1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0022.mat using Guid(6e5a8b310d499ce49aad08840a73b1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd06a1d97e2b596de496ba5e395e11856') in 0.029706 seconds
+  Import took 0.036198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0001_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(8bd1cde5187fad54f92ba89132102712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0001_nU4B1ut0_map_Kd.jpg using Guid(8bd1cde5187fad54f92ba89132102712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6544927880db52cae92edaea230d5e8f') in 0.026004 seconds
+  Import took 0.031067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0012_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(bd6afd35c7f23c540ada415cbace2715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0012_nU4B1ut0_map_Kd.jpg using Guid(bd6afd35c7f23c540ada415cbace2715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '078fd10053177d85289ec3ee67c23241') in 0.021041 seconds
+  Import took 0.026413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0009_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(6484c3b6a6bf53344896a307fda44046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0009_nU4B1ut0_map_Kd.jpg using Guid(6484c3b6a6bf53344896a307fda44046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4170e01ccdaed4eb74834c1c186a22ca') in 0.019910 seconds
+  Import took 0.024786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0008.mat
+  artifactKey: Guid(30c7deacba9559841aa866fc102368e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0008.mat using Guid(30c7deacba9559841aa866fc102368e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81453485b251cba31d9c9860c7f1193a') in 0.022305 seconds
+  Import took 0.026813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0012.mat
+  artifactKey: Guid(ae606dc81ff89de47aae850432d957af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0012.mat using Guid(ae606dc81ff89de47aae850432d957af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8498ed713567005e31bd9d32c4f87e47') in 0.018078 seconds
+  Import took 0.022567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0008.mat
+  artifactKey: Guid(30c7deacba9559841aa866fc102368e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0008.mat using Guid(30c7deacba9559841aa866fc102368e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81453485b251cba31d9c9860c7f1193a') in 0.019179 seconds
+  Import took 0.023026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0025.mat
+  artifactKey: Guid(18e2af644849ccd4cb52c4de2548e234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/material0025.mat using Guid(18e2af644849ccd4cb52c4de2548e234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ba65f5839e11a2858e7aa00f6f69ecc') in 0.021267 seconds
+  Import took 0.025934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0006_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(318f20a84eab4534880ad05248b8bb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0006_nU4B1ut0_map_Kd.jpg using Guid(318f20a84eab4534880ad05248b8bb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96852a956fd992c1729544fa8ec030f6') in 0.026678 seconds
+  Import took 0.031039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0008_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(29f647a6a50fe9d44b344357a3c8cae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0008_nU4B1ut0_map_Kd.jpg using Guid(29f647a6a50fe9d44b344357a3c8cae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b74d9d6bcbfb44de5ecc9fec7684c8c0') in 0.021583 seconds
+  Import took 0.026769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.741288 seconds.
+  path: Assets/Scans/29 Jan at 11_33 PM-dae-poly
+  artifactKey: Guid(7d24b11b978cf624b8bc6432fa63d1f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 11_33 PM-dae-poly using Guid(7d24b11b978cf624b8bc6432fa63d1f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36b97906bfb69ede57bc59656dced9aa') in 0.007853 seconds
+  Import took 0.012178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.058505 seconds.
+  path: Assets/Scans/29 Jan at 11_33 PM-dae-poly/29 Jan at 11_33 PM-poly.dae
+  artifactKey: Guid(71883e56d1bd56c4785b9716cb21ebdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 11_33 PM-dae-poly/29 Jan at 11_33 PM-poly.dae using Guid(71883e56d1bd56c4785b9716cb21ebdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d651d2dd768646c8304653ab9cdfc47') in 0.031561 seconds
+  Import took 0.035770 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/Scans/29 Jan at 11_33 PM-dae-poly/textured_material0000_dO0nPk3e_map_Kd.jpg
+  artifactKey: Guid(357c7c391830cc94ca4928ae9cf3f413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 11_33 PM-dae-poly/textured_material0000_dO0nPk3e_map_Kd.jpg using Guid(357c7c391830cc94ca4928ae9cf3f413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd254dc61abfcb543f917db36fbbdc7b9') in 0.024684 seconds
+  Import took 0.028466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 89.824768 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0022_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(46112796e31774847a2009cdc0ac82fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0022_nU4B1ut0_map_Kd.jpg using Guid(46112796e31774847a2009cdc0ac82fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a94b5b2d9eb6bb0baa4b11d937b2146') in 0.017246 seconds
+  Import took 0.021300 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0024_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(135c7d0617b167c45a4ff124cee408a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0024_nU4B1ut0_map_Kd.jpg using Guid(135c7d0617b167c45a4ff124cee408a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bc888f6ea935f42aae26331d1df3c82') in 0.029683 seconds
+  Import took 0.033863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0022_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(46112796e31774847a2009cdc0ac82fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0022_nU4B1ut0_map_Kd.jpg using Guid(46112796e31774847a2009cdc0ac82fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a94b5b2d9eb6bb0baa4b11d937b2146') in 0.014023 seconds
+  Import took 0.019564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0025_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(283276debfdb08f4a9846a7baa40628d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0025_nU4B1ut0_map_Kd.jpg using Guid(283276debfdb08f4a9846a7baa40628d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4905969b4e3d6c67e29ac0e5ea4ee49e') in 0.023117 seconds
+  Import took 0.027896 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0023_nU4B1ut0_map_Kd.jpg
+  artifactKey: Guid(30aae450f6be89a42bd1eea208ee4408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 7 44 PM-dae_poly/textured_material0023_nU4B1ut0_map_Kd.jpg using Guid(30aae450f6be89a42bd1eea208ee4408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aed883486cc5c58226adf376008c3bdc') in 0.026791 seconds
+  Import took 0.031766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 117.642908 seconds.
+  path: Assets/Scans/29 Jan at 11_33 PM-dae-poly/New Material.mat
+  artifactKey: Guid(5a05f3933fcdd21409663c59044e96ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 11_33 PM-dae-poly/New Material.mat using Guid(5a05f3933fcdd21409663c59044e96ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c217476daa8ecab85ec86310e3d61f9') in 0.042206 seconds
+  Import took 0.047325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.980089 seconds.
+  path: Assets/Scans/29 Jan at 11_33 PM-dae-poly/29 Jan at 11_33 PM-poly.dae
+  artifactKey: Guid(71883e56d1bd56c4785b9716cb21ebdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scans/29 Jan at 11_33 PM-dae-poly/29 Jan at 11_33 PM-poly.dae using Guid(71883e56d1bd56c4785b9716cb21ebdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8dfe7dab488dbedd37a031797f1097c') in 0.052193 seconds
+  Import took 0.056944 seconds .
 
