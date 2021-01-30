@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SkyManager : MonoBehaviour
 {
+    public Transform mainLight;
     public Material materialSky;
     private Color prevSkyColor;
     private Color nextSkyColor;
@@ -43,9 +44,9 @@ public class SkyManager : MonoBehaviour
                 nextAtmo = Random.value;
                 prevSunDir = nextSunDir;
                 //nextSunDir = Quaternion.AngleAxis(Random.value * 180, new Vector3(0,1,0)) * prevSunDir;
-                nextSunDir = new Vector3(Random.value*2-1, (Random.value*2-1)*0.2f, Random.value * 2 - 1);
+                nextSunDir = new Vector3(Random.value*2-1, (Random.value*2-1)*0.2f, Random.value * 2 - 1);  
                 prevSunSize = nextSunSize;
-                nextSunSize = Mathf.Min(0.8f, Mathf.Max(0.3f, Random.value));
+                nextSunSize = Mathf.Min(0.8f, Mathf.Max(0.1f, Random.value));
             }
             else
             {
@@ -61,6 +62,7 @@ public class SkyManager : MonoBehaviour
             materialSky.SetFloat("_DayLerp", Mathf.Lerp(prevAtmo, nextAtmo, lerpVal));
             materialSky.SetVector("_SunDir", Vector3.Lerp(prevSunDir, nextSunDir, lerpVal));
             materialSky.SetFloat("_SunSize", Mathf.Lerp(prevSunSize, nextSunSize, lerpVal));
+            mainLight.LookAt(mainLight.position - Vector3.Lerp(prevSunDir, nextSunDir, lerpVal));
         }
         
     }
