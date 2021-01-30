@@ -106,8 +106,8 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NbHue: 100
-    - _NbSat: 100
-    - _NbVal: 5
+    - _NbSat: 2
+    - _NbVal: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
