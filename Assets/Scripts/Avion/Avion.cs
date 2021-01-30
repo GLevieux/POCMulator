@@ -7,16 +7,19 @@ public class Avion : MonoBehaviour
 {
     [SerializeField] private Transform leftEngine;
     [SerializeField] private Transform rightEngine;
-    [SerializeField] private Camera cockpitCamera;
-    [SerializeField] private Camera leftEngineCamera;
-    [SerializeField] private Camera rightEngineCamera;
+    [SerializeField] private Transform verticalEngine;
+    [SerializeField] private GameObject cockpitCamera;
+    [SerializeField] private GameObject leftEngineCamera;
+    [SerializeField] private GameObject rightEngineCamera;
+    [SerializeField] private GameObject verticalEngineCamera;
     [SerializeField] private Slider leftEngineThruster;
     [SerializeField] private Slider rightEngineThruster;
-    [SerializeField] private Text liftForceText;
+    [SerializeField] private Slider verticalEngineThruster;
     [SerializeField] private float maxThrust;
     [SerializeField] private float minVelocityLiftForce;
     [SerializeField] private float maxLiftForce;
     [SerializeField] private float thrusterIncreaseSpeed;
+    [SerializeField] private float verticalThrusterChangeSpeed;
     [SerializeField] private float rotationSpeed;
 
     private Rigidbody thisRigidbody;
@@ -24,15 +27,21 @@ public class Avion : MonoBehaviour
     private Vector2 rotationInput;
     private float currentLeftEngineThrust;
     private float currentRightEngineThrust;
+    private float currentVerticalEngineThrust;
     private float currentLiftForce;
 
     private void Start()
     {
         thisRigidbody = GetComponent<Rigidbody>();
+        cockpitCamera.SetActive(true);
+        leftEngineCamera.SetActive(false);
+        rightEngineCamera.SetActive(false);
+        verticalEngineCamera.SetActive(false);
 
         rotationInput = new Vector2(0, 0);
         currentLeftEngineThrust = 0;
         currentRightEngineThrust = 0;
+        currentVerticalEngineThrust = 0;
         currentLiftForce = 0;
     }
 
@@ -53,25 +62,41 @@ public class Avion : MonoBehaviour
         if (Input.GetButton("RightEngineThrusterDecrease"))
             rightEngineThruster.value -= thrusterIncreaseSpeed * Time.deltaTime;
 
+        if (Input.GetButton("LiftThruster"))
+            verticalEngineThruster.value += verticalThrusterChangeSpeed * Time.deltaTime;
+        else
+            verticalEngineThruster.value -= verticalThrusterChangeSpeed * Time.deltaTime;
+
         if (Input.GetButtonDown("CockpitCamera"))
         {
-            cockpitCamera.enabled = true;
-            leftEngineCamera.enabled = false;
-            rightEngineCamera.enabled = false;
+            cockpitCamera.SetActive(true);
+            leftEngineCamera.SetActive(false);
+            rightEngineCamera.SetActive(false);
+            verticalEngineCamera.SetActive(false);
         }
 
         if (Input.GetButtonDown("LeftEngineCamera"))
         {
-            cockpitCamera.enabled = false;
-            leftEngineCamera.enabled = true;
-            rightEngineCamera.enabled = false;
+            cockpitCamera.SetActive(false);
+            leftEngineCamera.SetActive(true);
+            rightEngineCamera.SetActive(false);
+            verticalEngineCamera.SetActive(false);
         }
 
         if (Input.GetButtonDown("RightEngineCamera"))
         {
-            cockpitCamera.enabled = false;
-            leftEngineCamera.enabled = false;
-            rightEngineCamera.enabled = true;
+            cockpitCamera.SetActive(false);
+            leftEngineCamera.SetActive(false);
+            rightEngineCamera.SetActive(true);
+            verticalEngineCamera.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("LiftEngineCamera"))
+        {
+            cockpitCamera.SetActive(false);
+            leftEngineCamera.SetActive(false);
+            rightEngineCamera.SetActive(false);
+            verticalEngineCamera.SetActive(true);
         }
 
         UpdateUI();
@@ -79,26 +104,20 @@ public class Avion : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Rotation
-        thisRigidbody.MoveRotation(thisRigidbody.rotation * Quaternion.Euler(rotationInput.y * rotationSpeed * Time.deltaTime, 0, -rotationInput.x * rotationSpeed * Time.deltaTime));
-
         // Thrusters
         thisRigidbody.AddForceAtPosition(transform.forward * currentLeftEngineThrust * maxThrust, leftEngine.position);
         thisRigidbody.AddForceAtPosition(transform.forward * currentRightEngineThrust * maxThrust, rightEngine.position);
 
-        // Lift force
-        if (Vector3.Dot(thisRigidbody.velocity, transform.forward) >= minVelocityLiftForce)
-        {
-            Debug.DrawRay(transform.position, Vector3.Project(thisRigidbody.velocity, transform.forward) * 100f);
+        // Vertical thrusters
+        thisRigidbody.AddForce(transform.up * currentVerticalEngineThrust * maxThrust);
 
-            currentLiftForce = Mathf.Lerp(maxLiftForce, 0, Vector3.Angle(Vector3.Project(thisRigidbody.velocity, transform.forward), transform.forward) / 45f);
-            thisRigidbody.AddForce(Vector3.up * currentLiftForce);
-        }
+        // Rotation
+        thisRigidbody.MoveRotation(thisRigidbody.rotation * Quaternion.Euler(rotationInput.y * rotationSpeed * Time.deltaTime, 0, -rotationInput.x * rotationSpeed * Time.deltaTime));
     }
 
     private void UpdateUI()
     {
-        liftForceText.text = currentLiftForce.ToString();
+        
     }
 
     public void SetLeftEngineThrust(float value)
@@ -109,5 +128,10 @@ public class Avion : MonoBehaviour
     public void SetRightEngineThrust(float value)
     {
         currentRightEngineThrust = value;
+    }
+
+    public void SetVerticalEngineThrust(float value)
+    {
+        currentVerticalEngineThrust = value;
     }
 }
