@@ -345,10 +345,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusic:
-  - {fileID: 8300000, guid: 3705f25c5c770b9489513dc55cafb600, type: 3}
-  - {fileID: 8300000, guid: 42da66d17a80cb94e835b9a4ce203360, type: 3}
-  - {fileID: 8300000, guid: b5eab420618774c4cb7aa38e8920f154, type: 3}
-  - {fileID: 8300000, guid: 9c64bfb01237bb847aa23324acdd89fe, type: 3}
+  - {fileID: 8300000, guid: ed158e18098bb8849a8606a428f52d65, type: 3}
+  - {fileID: 8300000, guid: 0e93673563f71ea4da4bc662568c6065, type: 3}
+  - {fileID: 8300000, guid: 5a77e2c385d3c7743b08355a72d644f1, type: 3}
+  - {fileID: 8300000, guid: 9c06835d21ea5f345acac3f913851e75, type: 3}
+  - {fileID: 8300000, guid: 522559001c07ffa4799d599043a7f7d8, type: 3}
+  - {fileID: 8300000, guid: bcee70d4eb03ed54ab7ce211841c254c, type: 3}
 --- !u!4 &120103538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 263203887518977345, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
