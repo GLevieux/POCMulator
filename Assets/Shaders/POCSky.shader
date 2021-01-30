@@ -3,6 +3,11 @@ Shader "Unlit/POCSky"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _ColorDay("Color Day", Color) = (0,0,1,1)
+        _DayLerp("Day Lerp", Range(0,1)) = 0.2
+          _SunDir("Sun Dir", Vector) = (1,2,0.5)
+          _SunSize("Sun Size", Range(0,0.999999)) = 0.2
+    
     }
     SubShader
     {
@@ -28,13 +33,19 @@ Shader "Unlit/POCSky"
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
+                float2 uv : TEXCOORD0; 
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
+                float4 wPos : TEXCOORD2;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+
+            float4 _ColorDay;
+            float _DayLerp;
+            float _SunSize;
+            float3 _SunDir;
 
             float2 random(float2 p)
             {
@@ -85,6 +96,7 @@ Shader "Unlit/POCSky"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                o.wPos = v.vertex;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
@@ -92,9 +104,22 @@ Shader "Unlit/POCSky"
 
             fixed4 frag (v2f i) : SV_Target
             {
-          
+                //Sun
+                float3 dir = normalize(i.wPos.xyz);
+                float3 sunDir = normalize(_SunDir);
+
+                float3 vSunDir = normalize(UnityObjectToViewPos(sunDir)); 
                 
-                fixed4 col = fixed4(0, 0, 0, 1);
+
+                float dayLerp = _DayLerp; 
+
+                float angle = max(0, dot(sunDir, dir));
+                angle = pow(angle, 1000 * pow((1 - _SunSize),3)) * 100;
+                angle = 1 - step(angle, 0.9);
+
+                fixed4 sunCol = saturate(fixed4(1, 1, 1, 1) * angle);
+                
+                
                 float red = WorleyNoise(i.uv, 40)/2; // Always the same origin and result
                 float blue = WorleyNoise(i.uv*float2(0.2,0.1), 45) / 3  ; // Always the same origin and result
 
@@ -104,18 +129,26 @@ Shader "Unlit/POCSky"
                 float sizes[3] = { 0.998,0.98,0.98 };
                 float power[3] = { 3,0.3,0.1 };
                 float perlins[3] = { 10,15,8 };
+                fixed4 colStars = fixed4(0, 0, 0, 1);
                 for (int id = 0; id < nbLev; id++) {
                   float minDist = WorleyNoise(i.uv, density[id]); // Always the same origin and result
                   
                   fixed4 colStar = fixed4(1 + red-blue, 1-red-blue, 1-red + blue, 1) * power[id] * step(sizes[id], 1.0 - saturate(minDist));
                   colStar *= (noise(i.uv, perlins[id]) + noise(i.uv, perlins[id]*20))/2;
                   
-                  col += colStar;
+                  colStars += colStar;
 
                 }
 
+                fixed4 col = lerp(colStars, _ColorDay, dayLerp); 
+
+
+
                 
-                //col = fixed4(red, 0, 0, 1);
+                
+                sunCol += col;
+
+                col = lerp(col, sunCol, saturate(1 - (dayLerp * 0.6)));
 
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);

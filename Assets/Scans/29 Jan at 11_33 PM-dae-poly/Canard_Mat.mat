@@ -117,8 +117,8 @@ Material:
     - _ReceiveShadows: 1
     - _SampleGI: 0
     - _ScreenStep: 20
-    - _ScreenStepDepth: 0.2
-    - _ScreenStepScaleFactor: 8
+    - _ScreenStepDepth: 0.1
+    - _ScreenStepScaleFactor: 30
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1

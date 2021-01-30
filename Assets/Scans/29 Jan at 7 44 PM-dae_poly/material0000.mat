@@ -106,7 +106,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NbHue: 100
-    - _NbSat: 2
+    - _NbSat: 100
     - _NbVal: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -114,8 +114,8 @@ Material:
     - _ReceiveShadows: 1
     - _SampleGI: 0
     - _ScreenStep: 20
-    - _ScreenStepDepth: 0.18
-    - _ScreenStepScaleFactor: 8
+    - _ScreenStepDepth: 0.1
+    - _ScreenStepScaleFactor: 30
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

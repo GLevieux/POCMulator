@@ -39,16 +39,17 @@ Shader "Unlit/POCStyle2"
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
                 float4 colOut : TEXCOORD4;
+                float4 objPos : TEXCOORD5;
             };
 
             sampler2D _BaseMap;
             float4 _BaseMap_ST;
             int _NbHue;
-              int _NbSat;
-              int _NbVal;
-              int _ScreenStep;
-              float _ScreenStepDepth;
-              float _ScreenStepScaleFactor;
+            int _NbSat;
+            int _NbVal;
+            int _ScreenStep;
+            float _ScreenStepDepth;
+            float _ScreenStepScaleFactor;
 
             float3 RGBToHSV(float3 c)
             {
@@ -78,6 +79,7 @@ Shader "Unlit/POCStyle2"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                o.objPos = v.vertex; 
                 float norm = _ScreenStepScaleFactor + o.vertex.w* _ScreenStepDepth;
                 o.colOut = float4(abs(o.vertex.z/norm), 0, 0, 1);
                 o.vertex.x = stepVal(o.vertex.x/ norm, _ScreenStep )* norm;
@@ -100,8 +102,23 @@ Shader "Unlit/POCStyle2"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
+                float4 wPos = mul(unity_ObjectToWorld, i.objPos); 
+
+                float4 wPosStep = float4(
+                  stepVal(wPos.x / 5000, 5) * 5000,
+                  stepVal(wPos.y / 5000, 5) * 5000,
+                  stepVal(wPos.z / 5000, 5) * 5000,
+                  1);
+
+                float distToCam = length(mul(UNITY_MATRIX_V, wPosStep));
+                //Calc dist
+
+                if (distToCam > 4000 && wPos.y > 10)
+                  discard;
+                   
+
                 // sample the texture
                 //fixed4 col = i.colOut;
 
