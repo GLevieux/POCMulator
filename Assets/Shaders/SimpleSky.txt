@@ -1,0 +1,258 @@
+﻿Shader "Hidden/Shader/SimpleSky"
+{
+    HLSLINCLUDE
+
+    #pragma vertex Vert
+
+    #pragma editor_sync_compilation
+    #pragma target 4.5
+    #pragma only_renderers d3d11 ps4 xboxone vulkan metal switch
+
+    #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+    #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
+    #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonLighting.hlsl"
+    #include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
+    #include "Packages/com.unity.render-pipelines.high-definition/Runtime/Sky/SkyUtils.hlsl"
+    #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl"
+    #include "../PerlinNoiseGenerator/SimplexNoise2D.hlsl"
+
+    float _SunSize;
+    float _SunHaloSize;
+    float3 _SunForwardDirection;
+    float3 _SunColor;
+	float4 _GradientBottom;
+    float4 _GradientMiddle;
+    float4 _GradientTop;
+    float _GradientDiffusion;
+    float _SkyIntensity;
+    float _MajorStarsDensity;
+    float _MajorStarsSize;
+    float _BackgroundStarsDensity;
+    float _BackgroundStarsSize;
+    float4 _MajorStarsColor;
+    float4 _ClearingsStarsColor;
+    float4 _ConstellationsLinesColor;
+    float4 _BackgroundStarsColor;
+    float _NightTransitionValue;
+    sampler2D _StarsTexture; // Sampling point because the texture is set as point
+    sampler2D _ConstellationsTexture; // Sampling point because the texture is set as point
+    float4 _StarsTexture_TexelSize;
+    float _ForestRadius;
+    float _SkyNoiseOrigin;
+
+    #define PI 3.141592653589793
+    #define BorderShiftRange 0.01
+    #define BorderShift BorderShiftRange * 0.5
+    #define WindDirection 1
+    #define VeilAdditiveColor float3(0.004, 0.004, 0.004)
+    #define VeilMaxThicknessFactor 12
+    #define MinStarsDist 0.3
+    #define MinClearingStarsAlphaValue 0.75
+    #define MinConstellationsLinesAlphaValue 0.1
+
+    float2 random(float2 p)
+    {
+        return frac(sin(float2(dot(p, float2(127.1, 311.7)), dot(p, float2(269.5, 183.3)))) * 43758.5453);
+    }
+
+    float SNoise01(float2 origin, float2 coord, float scale)
+    {
+        return clamp((snoise(origin + coord * scale) + 1) * 0.5, 0, 1); // Remapped to 0..1
+	}
+
+    float WorleyNoise(float2 uv, float scale)
+    {
+        // Tile the space (scale increases count of cells)
+        float2 i_st = floor(uv * scale);
+        float2 f_st = frac(uv * scale);
+        float dist;
+        float minDist = 1.0;
+        for (float y= -1; y <= 1; y++)
+        {
+            for (float x= -1; x <= 1; x++)
+            {
+                // Neighbor place in the grid
+                float2 neighbor = float2(x, y);
+
+			    // Distance to the random position from current + neighbor place in the grid
+                dist = length(neighbor + random(i_st + neighbor) - f_st);
+
+                // Keep the closer distance
+                minDist = min(minDist, dist);
+            }
+        }
+        return minDist;
+	}
+
+    struct Attributes // Apparently the sky framework does not set up global shader variables bc it's always empty
+    {
+        uint vertexID : SV_VertexID;
+        UNITY_VERTEX_INPUT_INSTANCE_ID
+    };
+
+    struct Varyings // Apparently the sky framework does not set up global shader variables
+    {
+        float4 positionCS : SV_POSITION;
+        UNITY_VERTEX_OUTPUT_STEREO
+    };
+
+    Varyings Vert(Attributes input)
+    {
+        Varyings output;
+        UNITY_SETUP_INSTANCE_ID(input);
+        UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
+        output.positionCS = GetFullScreenTriangleVertexPosition(input.vertexID, UNITY_RAW_FAR_CLIP_VALUE);
+        return output;
+    }
+
+    float4 RenderSky(Varyings input)
+    {
+        float2 center = float2(0.5, 0.5);
+        float windSpeed = sin(_Time.w / 80.0);
+        float3 viewDirWS = GetSkyViewDirWS(input.positionCS.xy);
+        
+        // Sphere UV mapping
+        float2 uv = float2(asin(-viewDirWS.x) / PI + 0.5, asin(viewDirWS.z) / PI + 0.5); // Mapping directly on top of the sphere without using a cubemap because I only care about the top of the sky
+
+        float veilAdditionalNoise = SNoise01(0, uv, 64) * 0.04 - 0.02;
+
+        float2 dir = normalize(uv - center);
+        float distToCenter = distance(uv + dir * (SNoise01(lerp(_SkyNoiseOrigin, _SkyNoiseOrigin + WindDirection, windSpeed), uv, 16) * BorderShiftRange - BorderShift), center) + veilAdditionalNoise * 0.05;
+
+        float verticalGradient = viewDirWS.y * _GradientDiffusion;
+        float topLerpFactor = saturate(-verticalGradient);
+        float bottomLerpFactor = saturate(verticalGradient);
+        float3 color = lerp(_GradientMiddle.xyz, _GradientBottom.xyz, bottomLerpFactor);
+
+        float bands = 10.0;
+        if (distToCenter > _ForestRadius) // Gradient banding only outside of forest radius
+            color = lerp(color, _GradientTop.xyz, floor((topLerpFactor + (sign(topLerpFactor) * (SNoise01(_SkyNoiseOrigin, uv, 16) * BorderShiftRange) - BorderShift)) * bands) / bands) * _SkyIntensity;
+        else
+            color = lerp(color, _GradientTop.xyz, topLerpFactor) * _SkyIntensity;
+        
+        // Find sun angle from forward
+        
+        // Find sun position from angle
+        //float2 sunPosCS = float2(cos(radians(_SunAngle)) + 1, sin(radians(_SunAngle)) + 1) / 2.0; // Convert to 0..1
+
+        // Find sun dist
+        //float distToSun = length(input.positionCS.xy - sunPosCS);
+
+        // Below radius apply color
+        /*if (distToSun < _SunSize)
+        {
+            //color = _SunColor;
+		}*/
+
+        if (_NightTransitionValue > 0) // Show stars and veils at night only
+        {
+            if (viewDirWS.y < 0) // Upper hemisphere only
+            {
+                float3 nightColor = float3(0, 0, 0);
+                float minDist;
+
+                // Background stars
+                if (distToCenter < MinStarsDist) // Avoid stretch too far below the skybox
+                {
+                    minDist = WorleyNoise(uv, _BackgroundStarsDensity); // Always the same origin and result
+                    nightColor += _BackgroundStarsColor.rgb * pow(1.0 - saturate(minDist), _BackgroundStarsSize);
+			    }
+
+                // Major stars
+                if (distToCenter > _ForestRadius - BorderShift) // Major stars only visible beyond forest radius to hint at the exit
+                {
+                    if (distToCenter > _ForestRadius + BorderShift // Major stars only after border to avoid stars cut in half
+                        && distToCenter < MinStarsDist) // No major stars too far from the center to avoid the stretch
+                    {
+                        minDist = WorleyNoise(uv, _MajorStarsDensity); // Always the same origin and result
+                        nightColor += _MajorStarsColor.rgb * step(_MajorStarsSize, 1.0 - saturate(minDist));
+				    }
+
+                    if (distToCenter < MinStarsDist) // Upper sky veils
+                        nightColor += VeilAdditiveColor * step(0.4 + veilAdditionalNoise, SNoise01(lerp(_SkyNoiseOrigin, _SkyNoiseOrigin + WindDirection, windSpeed), uv, 8));
+                    else // Bottom thick veils that hide stars
+                        nightColor += VeilAdditiveColor * floor(lerp(1, VeilMaxThicknessFactor, (distToCenter - MinStarsDist) / (0.5 - MinStarsDist)));
+		        }
+                else // Constellations and clearings stars
+                {
+                    float size = (_ForestRadius - BorderShift) * 2.0;
+                    float start = (1.0 - size) * 0.5;
+                    float2 newUV = ((clamp(uv, start, start + size) - start) / size); // Map sky uv to stars texture
+
+                    // Constellations
+                    float alphaValue = tex2D(_ConstellationsTexture, newUV).a;
+                    if (alphaValue >= MinConstellationsLinesAlphaValue)
+                        nightColor += _ConstellationsLinesColor.rgb;
+
+                     // Clearing stars
+                    alphaValue = tex2D(_StarsTexture, newUV).a;
+                    if (alphaValue >= MinClearingStarsAlphaValue)
+                        nightColor += _ClearingsStarsColor.rgb;
+				}
+
+                color += nightColor * _NightTransitionValue; // Apply night transition value
+			}
+		}
+        
+        // Sun
+        float distFromSun = acos(dot(_SunForwardDirection, viewDirWS));
+        color += _SunColor * (1.0 - step(_SunSize, distFromSun));
+
+        // Sun halo
+        //float sunHaloSize = _SunSize + _SunHaloSize;
+        //
+        //float distFromHorizon = 1.0 - (viewDirWS.y);
+        //
+        //if (distFromSun < _SunSize)
+        //    color += _SunColor;
+        //else if (distFromSun < sunHaloSize)
+        //    color = lerp(color, _SunColor, pow(lerp(1, 0, (distFromSun - _SunSize) / (sunHaloSize - _SunSize)), 4));
+
+        return float4(color, 1.0);
+    }
+
+    float4 FragBaking(Varyings input) : SV_Target
+    {
+        return RenderSky(input);
+    }
+
+    float4 FragRender(Varyings input) : SV_Target
+    {
+        UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
+        float4 color = RenderSky(input);
+        color.rgb *= GetCurrentExposureMultiplier();
+        return color;
+    }
+
+    ENDHLSL
+
+    SubShader
+    {
+        Pass
+        {
+            ZWrite Off
+            ZTest Always
+            Blend Off
+            Cull Off
+
+            HLSLPROGRAM
+                #pragma fragment FragBaking
+            ENDHLSL
+
+        }
+
+        Pass
+        {
+            ZWrite Off
+            ZTest LEqual
+            Blend Off
+            Cull Off
+
+            HLSLPROGRAM
+                #pragma fragment FragRender
+            ENDHLSL
+        }
+
+    }
+    Fallback Off
+}
