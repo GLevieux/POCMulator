@@ -351,6 +351,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c06835d21ea5f345acac3f913851e75, type: 3}
   - {fileID: 8300000, guid: 522559001c07ffa4799d599043a7f7d8, type: 3}
   - {fileID: 8300000, guid: bcee70d4eb03ed54ab7ce211841c254c, type: 3}
+  - {fileID: 8300000, guid: 78acbcdbb181674488e0e85c581500d9, type: 3}
 --- !u!4 &120103538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 263203887518977345, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
@@ -755,6 +756,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 36025649, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 121296121, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_ClearFlags
       value: 4
