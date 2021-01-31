@@ -345,10 +345,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusic:
-  - {fileID: 8300000, guid: 3705f25c5c770b9489513dc55cafb600, type: 3}
-  - {fileID: 8300000, guid: 42da66d17a80cb94e835b9a4ce203360, type: 3}
-  - {fileID: 8300000, guid: b5eab420618774c4cb7aa38e8920f154, type: 3}
-  - {fileID: 8300000, guid: 9c64bfb01237bb847aa23324acdd89fe, type: 3}
+  - {fileID: 8300000, guid: ed158e18098bb8849a8606a428f52d65, type: 3}
+  - {fileID: 8300000, guid: 0e93673563f71ea4da4bc662568c6065, type: 3}
+  - {fileID: 8300000, guid: 5a77e2c385d3c7743b08355a72d644f1, type: 3}
+  - {fileID: 8300000, guid: 9c06835d21ea5f345acac3f913851e75, type: 3}
+  - {fileID: 8300000, guid: 522559001c07ffa4799d599043a7f7d8, type: 3}
+  - {fileID: 8300000, guid: bcee70d4eb03ed54ab7ce211841c254c, type: 3}
 --- !u!4 &120103538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 263203887518977345, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
@@ -621,7 +623,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -3544840032270421008, guid: 035fa1180ba062344b59ca877d02af08, type: 3}
   m_PrefabInstance: {fileID: 1927242715}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &509351567
+--- !u!64 &509351570
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -771,11 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1257076188, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362550713, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 263203887518977345, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_RootOrder
@@ -874,24 +876,40 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 263203889350891078, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: near clip plane
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203889350891078, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
+    - target: {fileID: 263203889350891079, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203889350891079, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.171
+      objectReference: {fileID: 0}
     - target: {fileID: 1411546888226117411, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1411546888445370146, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411546889831363712, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1411546890185775964, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1411546890222873004, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
@@ -1069,7 +1087,6 @@ GameObject:
   - component: {fileID: 1675273166}
   - component: {fileID: 1675273165}
   - component: {fileID: 1675273168}
-  - component: {fileID: 1675273169}
   m_Layer: 0
   m_Name: SkyCam
   m_TagString: Untagged
@@ -1174,24 +1191,12 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1675273169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675273164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aba587b1fc71aa64c9f6119e562d3edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1728903088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3544840032270421008, guid: 7bf2e92c08f12eb4a8fe5ecba151ec21, type: 3}
   m_PrefabInstance: {fileID: 330974484}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1728903089
+--- !u!64 &1728903092
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1210,7 +1215,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -3544840032270421008, guid: a28312d4840f84e458bdf0d2ae870724, type: 3}
   m_PrefabInstance: {fileID: 1493149173}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1869919324
+--- !u!64 &1869919327
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1229,7 +1234,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -7927590474216069225, guid: 6c43e3d424a7b0f4585a521644a3fdd7, type: 3}
   m_PrefabInstance: {fileID: 32494058}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1922889423
+--- !u!64 &1922889426
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1331,3 +1336,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3682159157377030461, guid: 71883e56d1bd56c4785b9716cb21ebdc, type: 3}
+--- !u!1 &2046248951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 263203889350891076, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+  m_PrefabInstance: {fileID: 1328883844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2046248956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046248951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bf44e7e1a529549abaabe673cd6453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
