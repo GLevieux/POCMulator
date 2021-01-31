@@ -1028,7 +1028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: myMusic.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: myMusic.Array.data[2]
@@ -1042,6 +1042,10 @@ PrefabInstance:
       propertyPath: myMusic.Array.data[7]
       value: 
       objectReference: {fileID: 8300000, guid: 2278f91070c26064e992c40b7504e46b, type: 3}
+    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: myMusic.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 16301efe1dc2b3b479e00a6778c22898, type: 3}
     - target: {fileID: 239436431, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
