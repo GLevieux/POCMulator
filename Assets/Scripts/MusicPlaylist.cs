@@ -57,14 +57,10 @@ public class MusicPlaylist : MonoBehaviour
             fadeTime = fadeDuration;
         }
 
-        if (playerWantsMusic == false)
+        if (playerWantsMusic == false && fadeTime > 0)
         {
-                
-            
-
             fadeTime -= Time.deltaTime;
             GetComponent<AudioSource>().volume = fadeTime / fadeDuration;
-            Debug.Log(GetComponent<AudioSource>().volume);
 
             if (fadeTime <= 0)
             {
@@ -88,8 +84,10 @@ public class MusicPlaylist : MonoBehaviour
 
         //restart radio
         if (!GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.V) && (playerWantsMusic == false))
+        {
             playerWantsMusic = true;
-
+        }
+            
         //active loop music
         if (Input.GetKeyDown(KeyCode.C))
         {
