@@ -17,6 +17,7 @@ public class AvionSounds : MonoBehaviour
 
     public AudioSource audioSourceStart;
     public AudioSource audioSourceRun;
+    public AudioSource audioSourceLift;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class AvionSounds : MonoBehaviour
 
                 etatAcceleration = EtatAcceleration.RUNNING;
             }
+
         }
 
         if (Input.GetButton("LeftEngineThrusterIncrease") || Input.GetButton("RightEngineThrusterIncrease"))
@@ -53,6 +55,12 @@ public class AvionSounds : MonoBehaviour
             audioSourceRun.Stop();
 
             etatAcceleration = EtatAcceleration.STOPPED;
+        }
+
+        if (Input.GetButton("LiftThruster"))
+        {
+            audioSourceLift.Play();
+            audioSourceLift.loop = false;
         }
     }
 }
