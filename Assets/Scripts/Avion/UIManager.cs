@@ -17,6 +17,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider verticalSpeedPositive;
     [SerializeField] private Slider verticalSpeedNegative;
 
+    [SerializeField] private Transform orientationTsfm;
+
+    [SerializeField] private Text songName;
+
     void Start()
     {
         
@@ -25,6 +29,16 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetOrientation(Transform avionTsfm)
+    {
+        orientationTsfm.localRotation = Quaternion.AngleAxis(180, Vector3.up) * avionTsfm.rotation;
+    }
+
+    public void SetSongName(string name)
+    {
+        songName.text = name;
     }
 
     public void UpdateLeftEngineThrusterIncrease(float speed)

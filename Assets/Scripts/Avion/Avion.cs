@@ -20,6 +20,7 @@ public class Avion : MonoBehaviour
 
     private Rigidbody thisRigidbody;
     private UIManager uiManager;
+    private MusicPlaylist musicPlaylist;
 
     private Vector2 rotationInput;
     private float currentLeftEngineThrust;
@@ -30,6 +31,7 @@ public class Avion : MonoBehaviour
     {
         thisRigidbody = GetComponent<Rigidbody>();
         uiManager = GetComponentInChildren<UIManager>();
+        musicPlaylist = GetComponentInChildren<MusicPlaylist>();
         cockpitCamera.SetActive(true);
         leftEngineCamera.SetActive(false);
         rightEngineCamera.SetActive(false);
@@ -104,6 +106,9 @@ public class Avion : MonoBehaviour
             uiManager.UpdateVerticalEngineThrusterIncrease(currentVerticalEngineThrust);
         else
             uiManager.UpdateVerticalEngineThrusterDecrease(-currentVerticalEngineThrust);
+
+        uiManager.SetOrientation(transform);
+        uiManager.SetSongName(musicPlaylist.GetNameOfCurrentSong());
 
         if (Input.GetButtonDown("CockpitCamera"))
         {
