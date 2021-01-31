@@ -8,8 +8,8 @@ Shader "Unlit/POCStyle2"
         _NbSat("Nb Sat", Int) = 100
         _NbVal("Nb Val", Int) = 3
         _ScreenStep("Screen Step", Int) = 20
-        _ScreenStepDepth("Screen Step Depth", Range(0, 1)) = 0.2
-        _ScreenStepScaleFactor("Screen Scale Factor", Range(0, 300)) = 8
+        _ScreenStepDepth("Screen Step Depth", Range(0, 1)) = 0.1
+        _ScreenStepScaleFactor("Screen Scale Factor", Range(0, 300)) = 30
     }
     SubShader
     {
@@ -26,7 +26,7 @@ Shader "Unlit/POCStyle2"
             #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
-
+           
             struct appdata
             {
                 float4 vertex : POSITION;
