@@ -13,8 +13,7 @@ public class Avion : MonoBehaviour
     [SerializeField] private GameObject rightEngineCamera;
     [SerializeField] private GameObject verticalEngineCamera;
     [SerializeField] private float maxThrust;
-    [SerializeField] private float minVelocityLiftForce;
-    [SerializeField] private float maxLiftForce;
+    [SerializeField] private float maxVelocity;
     [SerializeField] private float thrusterIncreaseSpeed;
     [SerializeField] private float verticalThrusterChangeSpeed;
     [SerializeField] private float rotationSpeed;
@@ -40,6 +39,16 @@ public class Avion : MonoBehaviour
         currentLeftEngineThrust = 0;
         currentRightEngineThrust = 0;
         currentVerticalEngineThrust = 0;
+
+        uiManager.UpdateLeftEngineThrusterIncrease(currentLeftEngineThrust);
+        uiManager.UpdateLeftEngineThrusterDecrease(currentLeftEngineThrust);
+        uiManager.UpdateRightEngineThrusterIncrease(currentRightEngineThrust);
+        uiManager.UpdateRightEngineThrusterDecrease(currentRightEngineThrust);
+        uiManager.UpdateVerticalEngineThrusterIncrease(currentVerticalEngineThrust);
+        uiManager.UpdateVerticalEngineThrusterDecrease(currentVerticalEngineThrust);
+
+        uiManager.UpdateForwardSpeed(0);
+        uiManager.UpdateVerticalSpeed(0);
     }
 
     private void Update()
@@ -49,28 +58,52 @@ public class Avion : MonoBehaviour
 
         if (Input.GetButton("LeftEngineThrusterIncrease"))
             currentLeftEngineThrust += thrusterIncreaseSpeed * Time.deltaTime;
+        else if (currentLeftEngineThrust > 0)
+            currentLeftEngineThrust -= thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("RightEngineThrusterIncrease"))
             currentRightEngineThrust += thrusterIncreaseSpeed * Time.deltaTime;
+        else if (currentRightEngineThrust > 0)
+            currentRightEngineThrust -= thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("LeftEngineThrusterDecrease"))
             currentLeftEngineThrust -= thrusterIncreaseSpeed * Time.deltaTime;
+        else if (currentLeftEngineThrust < 0)
+            currentLeftEngineThrust += thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("RightEngineThrusterDecrease"))
             currentRightEngineThrust -= thrusterIncreaseSpeed * Time.deltaTime;
+        else if (currentRightEngineThrust < 0)
+            currentRightEngineThrust += thrusterIncreaseSpeed * Time.deltaTime;
 
-        if (Input.GetButton("LiftThruster"))
+        if (Input.GetButton("VerticalThrusterIncrease"))
             currentVerticalEngineThrust += verticalThrusterChangeSpeed * Time.deltaTime;
-        else
+        else if (currentVerticalEngineThrust > 0)
             currentVerticalEngineThrust -= verticalThrusterChangeSpeed * Time.deltaTime;
 
-        currentLeftEngineThrust = Mathf.Clamp01(currentLeftEngineThrust);
-        currentRightEngineThrust = Mathf.Clamp01(currentRightEngineThrust);
-        currentVerticalEngineThrust = Mathf.Clamp01(currentVerticalEngineThrust);
+        if (Input.GetButton("VerticalThrusterDecrease"))
+            currentVerticalEngineThrust -= verticalThrusterChangeSpeed * Time.deltaTime;
+        else if (currentVerticalEngineThrust < 0)
+            currentVerticalEngineThrust += verticalThrusterChangeSpeed * Time.deltaTime;
 
-        uiManager.UpdateLeftEngineThruster(currentLeftEngineThrust);
-        uiManager.UpdateRightEngineThruster(currentRightEngineThrust);
-        uiManager.UpdateVerticalThruster(currentVerticalEngineThrust);
+        currentLeftEngineThrust = Mathf.Clamp(currentLeftEngineThrust, -1, 1);
+        currentRightEngineThrust = Mathf.Clamp(currentRightEngineThrust, -1, 1);
+        currentVerticalEngineThrust = Mathf.Clamp(currentVerticalEngineThrust, -1, 1);
+
+        if (currentLeftEngineThrust > 0)
+            uiManager.UpdateLeftEngineThrusterIncrease(currentLeftEngineThrust);
+        else
+            uiManager.UpdateLeftEngineThrusterDecrease(-currentLeftEngineThrust);
+
+        if (currentRightEngineThrust > 0)
+            uiManager.UpdateRightEngineThrusterIncrease(currentRightEngineThrust);
+        else
+            uiManager.UpdateRightEngineThrusterDecrease(-currentRightEngineThrust);
+
+        if (currentVerticalEngineThrust > 0)
+            uiManager.UpdateVerticalEngineThrusterIncrease(currentVerticalEngineThrust);
+        else
+            uiManager.UpdateVerticalEngineThrusterDecrease(-currentVerticalEngineThrust);
 
         if (Input.GetButtonDown("CockpitCamera"))
         {
@@ -116,5 +149,55 @@ public class Avion : MonoBehaviour
 
         // Rotation
         thisRigidbody.MoveRotation(thisRigidbody.rotation * Quaternion.Euler(rotationInput.y * rotationSpeed * Time.deltaTime, 0, -rotationInput.x * rotationSpeed * Time.deltaTime));
+
+        ClampForwardVelocity();
+        ClampVerticalVelocity();
+
+        uiManager.UpdateForwardSpeed(GetForwardVelocityNormalized());
+        uiManager.UpdateVerticalSpeed(GetVerticalVelocityNormalized());
+    }
+
+    private void ClampForwardVelocity()
+    {
+        if (GetForwardVelocity() >= maxVelocity)
+        {
+            thisRigidbody.velocity = (transform.forward * maxVelocity) + (transform.up * GetVerticalVelocity());
+        }
+        else if (GetForwardVelocity() <= -maxVelocity)
+        {
+            thisRigidbody.velocity = (-transform.forward * maxVelocity) + (transform.up * GetVerticalVelocity());
+        }
+    }
+
+    private void ClampVerticalVelocity()
+    {
+        if (GetVerticalVelocity() >= maxVelocity)
+        {
+            thisRigidbody.velocity = (transform.forward * GetForwardVelocity()) + (transform.up * maxVelocity);
+        }
+        else if (GetVerticalVelocity() <= -maxVelocity)
+        {
+            thisRigidbody.velocity = (transform.forward * GetForwardVelocity()) + (-transform.up * maxVelocity);
+        }
+    }
+
+    public float GetForwardVelocity()
+    {
+        return Vector3.Dot(thisRigidbody.velocity, transform.forward);
+    }
+
+    public float GetVerticalVelocity()
+    {
+        return Vector3.Dot(thisRigidbody.velocity, transform.up);
+    }
+
+    public float GetForwardVelocityNormalized()
+    {
+        return GetForwardVelocity() / maxVelocity;
+    }
+
+    public float GetVerticalVelocityNormalized()
+    {
+        return GetVerticalVelocity() / maxVelocity;
     }
 }

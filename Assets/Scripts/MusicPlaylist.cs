@@ -27,6 +27,13 @@ public class MusicPlaylist : MonoBehaviour
         }
     }
 
+    public string GetNameOfCurrentSong ()
+    {
+        string currentSongName = GetComponent<AudioSource>().clip.name;
+
+        return currentSongName;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,8 @@ public class MusicPlaylist : MonoBehaviour
         GetComponent<AudioSource>().Play();
 
         mainVolume = GetComponent<AudioSource>().volume;
+
+        GetNameOfCurrentSong();
     }
 
     // Update is called once per frame
@@ -71,6 +80,8 @@ public class MusicPlaylist : MonoBehaviour
             GetComponent<AudioSource>().clip = myMusic[currentSong];
             GetComponent<AudioSource>().loop = true;
             GetComponent<AudioSource>().Play();
+
+            GetNameOfCurrentSong();
         }
 
         //stop radio
@@ -110,6 +121,7 @@ public class MusicPlaylist : MonoBehaviour
 
             musicStopped = false;
 
+            GetNameOfCurrentSong();
         }
 
         if (!musicStopped && GetComponent<AudioSource>().volume < mainVolume)
