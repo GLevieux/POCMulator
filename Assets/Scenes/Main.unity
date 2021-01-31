@@ -1026,6 +1026,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: myMusic.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: myMusic.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: d73400b4f8cd39544808bc90ea1057c2, type: 3}
+    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: myMusic.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2278f91070c26064e992c40b7504e46b, type: 3}
     - target: {fileID: 239436431, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
