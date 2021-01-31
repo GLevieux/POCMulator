@@ -19,16 +19,42 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Transform orientationTsfm;
 
+    [SerializeField] private Text gameName;
     [SerializeField] private Text songName;
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        StartCoroutine(ShowTitle());
     }
 
     void Update()
     {
         
+    }
+
+    private IEnumerator ShowTitle()
+    {
+        gameName.rectTransform.sizeDelta += new Vector2(10f * Time.deltaTime, 0);
+
+        yield return null;
+
+        if (gameName.rectTransform.rect.width < 60)
+            StartCoroutine(ShowTitle());
+        else
+            StartCoroutine(HideTitle());
+    }
+
+    private IEnumerator HideTitle()
+    {
+        gameName.rectTransform.sizeDelta -= new Vector2(15f * Time.deltaTime, 0);
+
+        yield return null;
+
+        if (gameName.rectTransform.rect.width > 0)
+            StartCoroutine(HideTitle());
     }
 
     public void SetOrientation(Transform avionTsfm)
