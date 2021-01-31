@@ -64,6 +64,10 @@ public class Avion : MonoBehaviour
         else
             currentVerticalEngineThrust -= verticalThrusterChangeSpeed * Time.deltaTime;
 
+        currentLeftEngineThrust = Mathf.Clamp01(currentLeftEngineThrust);
+        currentRightEngineThrust = Mathf.Clamp01(currentRightEngineThrust);
+        currentVerticalEngineThrust = Mathf.Clamp01(currentVerticalEngineThrust);
+
         uiManager.UpdateLeftEngineThruster(currentLeftEngineThrust);
         uiManager.UpdateRightEngineThruster(currentRightEngineThrust);
         uiManager.UpdateVerticalThruster(currentVerticalEngineThrust);
@@ -99,8 +103,6 @@ public class Avion : MonoBehaviour
             rightEngineCamera.SetActive(false);
             verticalEngineCamera.SetActive(true);
         }
-
-        UpdateUI();
     }
 
     private void FixedUpdate()
@@ -114,10 +116,5 @@ public class Avion : MonoBehaviour
 
         // Rotation
         thisRigidbody.MoveRotation(thisRigidbody.rotation * Quaternion.Euler(rotationInput.y * rotationSpeed * Time.deltaTime, 0, -rotationInput.x * rotationSpeed * Time.deltaTime));
-    }
-
-    private void UpdateUI()
-    {
-        
     }
 }
