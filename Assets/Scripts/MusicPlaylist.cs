@@ -8,6 +8,10 @@ public class MusicPlaylist : MonoBehaviour
     AudioClip[] playedMusic;
 
     bool playerWantsMusic = true;
+    bool loopActivated = false;
+
+    public float fadeTime = 1;
+    float volume = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +19,9 @@ public class MusicPlaylist : MonoBehaviour
         if(!GetComponent<AudioSource>().playOnAwake)
         {
             GetComponent<AudioSource>().clip = myMusic[Random.Range(0, myMusic.Length)];
+            
             GetComponent<AudioSource>().loop = true;
+            
             GetComponent<AudioSource>().Play();
 
         }
@@ -27,7 +33,9 @@ public class MusicPlaylist : MonoBehaviour
         if (!GetComponent<AudioSource>().isPlaying && playerWantsMusic == true)
         {
             GetComponent<AudioSource>().clip = myMusic[Random.Range(0, myMusic.Length)];
+
             GetComponent<AudioSource>().loop = true;
+            
             GetComponent<AudioSource>().Play();
 
         }
@@ -44,17 +52,50 @@ public class MusicPlaylist : MonoBehaviour
             playerWantsMusic = false;
             
             if (playerWantsMusic == false)
-            GetComponent<AudioSource>().Stop();
+            {
+                float t = fadeTime;
+                float currentVolume = GetComponent<AudioSource>().volume;
+
+                while (t > 0)
+                {
+                    t -= Time.deltaTime;
+                    GetComponent<AudioSource>().volume = t / fadeTime;
+                    Debug.Log(GetComponent<AudioSource>().volume);
+                }
+
+                if (GetComponent<AudioSource>().volume == 0)
+                {
+                    GetComponent<AudioSource>().Stop();
+                    GetComponent<AudioSource>().volume = currentVolume;
+                }
+                    
+            }
+                
         }
         
         //restart radio
         if (!GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.V) && (playerWantsMusic == false))
-        playerWantsMusic = true;
+            playerWantsMusic = true;
+
+        //active loop music
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (loopActivated == false)
+            {
+                GetComponent<AudioSource>().loop = true;
+                loopActivated = true;
+                Debug.Log("on a activé la loop");
+            } 
+            else
+            {
+                GetComponent<AudioSource>().loop = false;
+                loopActivated = false;
+                Debug.Log("on a désactivé la loop");
+            }
+            
+        }
 
     }
 
-    void MusicSelection()
-    {
 
-    }
 }
