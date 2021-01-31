@@ -57,7 +57,7 @@ public class AvionSounds : MonoBehaviour
             etatAcceleration = EtatAcceleration.STOPPED;
         }
 
-        if (Input.GetButton("LiftThruster"))
+        if (Input.GetButton("VerticalThrusterIncrease") || Input.GetButton("VerticalThrusterIncrease"))
         {
             audioSourceLift.Play();
             audioSourceLift.loop = false;
