@@ -62,7 +62,7 @@ public class MusicPlaylist : MonoBehaviour
             }
 
             GetComponent<AudioSource>().clip = myMusic[currentSong];
-            GetComponent<AudioSource>().loop = true;
+            GetComponent<AudioSource>().loop = false;
             GetComponent<AudioSource>().Play();
         }
         
