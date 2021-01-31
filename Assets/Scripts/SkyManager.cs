@@ -16,7 +16,7 @@ public class SkyManager : MonoBehaviour
     private float nextSunSize;
     private float timeLerp = 0;
     private float durationLerpLong = 20;
-    private float durationLerpShort = 5;
+    private float durationLerpShort = 4;
     private bool transition = false;
     // Start is called before the first frame update
     void Start()
