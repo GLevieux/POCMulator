@@ -16,8 +16,6 @@ public class MusicPlaylist : MonoBehaviour
     float mainVolume;
     int currentSong = 0;
 
-    string currentSongName;
-
     void reshuffle(AudioClip[] myMusic)
     {
         for (int t = 0; t < myMusic.Length; t++)
@@ -29,11 +27,9 @@ public class MusicPlaylist : MonoBehaviour
         }
     }
 
-    string NameOfCurrentSong ()
+    public string GetNameOfCurrentSong ()
     {
-        currentSongName = GetComponent<AudioSource>().clip.name;
-
-        Debug.Log(currentSongName);
+        string currentSongName = GetComponent<AudioSource>().clip.name;
 
         return currentSongName;
     }
@@ -50,7 +46,7 @@ public class MusicPlaylist : MonoBehaviour
 
         mainVolume = GetComponent<AudioSource>().volume;
 
-        NameOfCurrentSong();
+        GetNameOfCurrentSong();
     }
 
     // Update is called once per frame
@@ -85,7 +81,7 @@ public class MusicPlaylist : MonoBehaviour
             GetComponent<AudioSource>().loop = true;
             GetComponent<AudioSource>().Play();
 
-            NameOfCurrentSong();
+            GetNameOfCurrentSong();
         }
 
         //stop radio
@@ -125,7 +121,7 @@ public class MusicPlaylist : MonoBehaviour
 
             musicStopped = false;
 
-            NameOfCurrentSong();
+            GetNameOfCurrentSong();
         }
 
         if (!musicStopped && GetComponent<AudioSource>().volume < mainVolume)
