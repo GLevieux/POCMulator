@@ -10,8 +10,10 @@ public class MusicPlaylist : MonoBehaviour
     bool playerWantsMusic = true;
     bool loopActivated = false;
 
-    public float fadeTime = 1;
+    public float fadeDuration = 1.0f;
+    public float fadeTime;
     float volume = 1;
+    float mainVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class MusicPlaylist : MonoBehaviour
             GetComponent<AudioSource>().Play();
 
         }
+
+        mainVolume = GetComponent<AudioSource>().volume;
     }
 
     // Update is called once per frame
@@ -45,34 +49,43 @@ public class MusicPlaylist : MonoBehaviour
         {
             GetComponent<AudioSource>().Stop();
         }
-        
+
         //stop radio
         if (GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.B))
         {
             playerWantsMusic = false;
-            
-            if (playerWantsMusic == false)
-            {
-                float t = fadeTime;
-                float currentVolume = GetComponent<AudioSource>().volume;
-
-                while (t > 0)
-                {
-                    t -= Time.deltaTime;
-                    GetComponent<AudioSource>().volume = t / fadeTime;
-                    Debug.Log(GetComponent<AudioSource>().volume);
-                }
-
-                if (GetComponent<AudioSource>().volume == 0)
-                {
-                    GetComponent<AudioSource>().Stop();
-                    GetComponent<AudioSource>().volume = currentVolume;
-                }
-                    
-            }
-                
+            fadeTime = fadeDuration;
         }
-        
+
+        if (playerWantsMusic == false)
+        {
+                
+            
+
+            fadeTime -= Time.deltaTime;
+            GetComponent<AudioSource>().volume = fadeTime / fadeDuration;
+            Debug.Log(GetComponent<AudioSource>().volume);
+
+            if (fadeTime <= 0)
+            {
+                GetComponent<AudioSource>().Stop();
+                GetComponent<AudioSource>().volume = 0;
+            }
+                    
+        }
+
+        if (playerWantsMusic)
+        {
+
+            if (GetComponent<AudioSource>().volume <= 0 && GetComponent<AudioSource>().volume < mainVolume)
+            {
+                GetComponent<AudioSource>().volume += Time.deltaTime;
+            }
+
+        }
+
+
+
         //restart radio
         if (!GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.V) && (playerWantsMusic == false))
             playerWantsMusic = true;
