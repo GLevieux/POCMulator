@@ -603,38 +603,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: ed158e18098bb8849a8606a428f52d65, type: 3}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0e93673563f71ea4da4bc662568c6065, type: 3}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 78acbcdbb181674488e0e85c581500d9, type: 3}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5a77e2c385d3c7743b08355a72d644f1, type: 3}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9c06835d21ea5f345acac3f913851e75, type: 3}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 522559001c07ffa4799d599043a7f7d8, type: 3}
-    - target: {fileID: 36025651, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
-      propertyPath: myMusic.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: bcee70d4eb03ed54ab7ce211841c254c, type: 3}
     - target: {fileID: 239436431, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -694,6 +662,10 @@ PrefabInstance:
     - target: {fileID: 1513379074, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743747996, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: volumeThrusters
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 263203887518977345, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_RootOrder
