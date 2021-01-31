@@ -1,0 +1,407 @@
+fileFormatVersion: 2
+guid: 749f9d36603c8c64a8a5fa279f37e569
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_0
+    second: {fileID: 2100000, guid: cc58d143c3a4b7344b3ae86f3b366810, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_1
+    second: {fileID: 2100000, guid: 266406912529ceb439e5b7759486cd56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_10
+    second: {fileID: 2100000, guid: 70164319bb13e554fae426e40747a75c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_11
+    second: {fileID: 2100000, guid: 91cec6d931f7a8045948594b3a465d51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_12
+    second: {fileID: 2100000, guid: 473ccf57c532cc0408244214860107f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_13
+    second: {fileID: 2100000, guid: 2567e5eae9c42ea4d84de614fe95c747, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_14
+    second: {fileID: 2100000, guid: d59193022f19516488c071f91c28466d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_15
+    second: {fileID: 2100000, guid: e028445a7402ade45b486d0a8106024a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_16
+    second: {fileID: 2100000, guid: 9260a35b0918d054fa8294aac875d329, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_17
+    second: {fileID: 2100000, guid: dfad4dcf4edf1704bbbbc3f6607e617f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_18
+    second: {fileID: 2100000, guid: 0b943cb28ab066d41a7d9d22fa53170d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_19
+    second: {fileID: 2100000, guid: b84f6f33510d7ed46b1efc46b5616348, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_2
+    second: {fileID: 2100000, guid: 2b9df65718cece24da00c91a53dd55fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_20
+    second: {fileID: 2100000, guid: 6a3c953e778167f4990a0ba891060e09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_21
+    second: {fileID: 2100000, guid: 58c1f7ff2e1c2684e9bc0793ca4d5446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_22
+    second: {fileID: 2100000, guid: cb5228fd2cba52a409e70b09a455c930, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_23
+    second: {fileID: 2100000, guid: be46ffcd51f49eb4195dfa0bc72551e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_24
+    second: {fileID: 2100000, guid: 379bf82c252594d41a5129d5a51e78a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_25
+    second: {fileID: 2100000, guid: 3d0e292f39c04b04f8c839bd3a0de607, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_26
+    second: {fileID: 2100000, guid: e8cea46f83bae7e429d356b9d24e40b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_27
+    second: {fileID: 2100000, guid: 6418d4110248c8343ac88cf6dd81809e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_28
+    second: {fileID: 2100000, guid: 4c56d0e272b755d41bfcd47e4f067b26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_29
+    second: {fileID: 2100000, guid: 3ae0371eeba2d6746847568c2576e3f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_3
+    second: {fileID: 2100000, guid: ab003b649503c244e8537c13ab947cc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_30
+    second: {fileID: 2100000, guid: 3a1d88fd06142004dba23f92d17f4e6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_31
+    second: {fileID: 2100000, guid: 3b37f4ae1a196dc419b4f0bba1bc3682, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_32
+    second: {fileID: 2100000, guid: 8d9105c54b5996742b992ce99c26bcef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_33
+    second: {fileID: 2100000, guid: 188b813e6a58f4b44858696dff46b918, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_34
+    second: {fileID: 2100000, guid: 95deecd1245958f47ad54aaf8ed31ccf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_35
+    second: {fileID: 2100000, guid: 4970193dc3083f84d964ced4b756b2c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_36
+    second: {fileID: 2100000, guid: 6f461785943d01c459179e0ff9c5a21d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_37
+    second: {fileID: 2100000, guid: cece69692b939934e87eeddae63c484e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_38
+    second: {fileID: 2100000, guid: 427cd16857894534bae0560327761bec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_39
+    second: {fileID: 2100000, guid: 0114c98d2d47de84ea0d883dde046375, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_4
+    second: {fileID: 2100000, guid: f0461b62007668f46834cf62b8a0bf07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_40
+    second: {fileID: 2100000, guid: 70e4c25a41b9169488f3e45a9f0954b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_41
+    second: {fileID: 2100000, guid: 8c465a69a82f22940ad9bcaf93ab64f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_42
+    second: {fileID: 2100000, guid: ba5ab4628b37a1a4cb4cdb9f1e21fc49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_43
+    second: {fileID: 2100000, guid: 68027f9ba9337bc4f93e764809a4c85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_44
+    second: {fileID: 2100000, guid: 06aec24e556455e41a6bb4b2448a102f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_45
+    second: {fileID: 2100000, guid: 26601036a812fdb428e4c34ab461f5f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_46
+    second: {fileID: 2100000, guid: fbc3f32d31c06ed41b693b89a76bb75b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_47
+    second: {fileID: 2100000, guid: 60d50f316c294e544bf9ab87909a3cd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_48
+    second: {fileID: 2100000, guid: efcf0d83fad8ab645a9397285b8d994f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_49
+    second: {fileID: 2100000, guid: b6b67cf89f7292b43998951469cfe3f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_5
+    second: {fileID: 2100000, guid: ed4d4ab8ce02e0642b6ee51ad57a0663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_50
+    second: {fileID: 2100000, guid: 4bb3783b0c24126469e1a5cc5f6d8ca5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_51
+    second: {fileID: 2100000, guid: 874b503d02a58644ab3237bce0d467ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_52
+    second: {fileID: 2100000, guid: d037eacd95bf9bc4ea677ef05e227b3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_53
+    second: {fileID: 2100000, guid: 286499aa466696f4ebe6dd0950f69f7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_54
+    second: {fileID: 2100000, guid: 873210244de8ffc4f92183f6cd77e349, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_55
+    second: {fileID: 2100000, guid: 0bdbe2fe13fa0fc419ff2c7f05939425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_56
+    second: {fileID: 2100000, guid: 970ee301e13401d438bcd3b8ff46edd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_57
+    second: {fileID: 2100000, guid: ccee1e66526915443b37920e351e4752, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_58
+    second: {fileID: 2100000, guid: 05e8968e309037345ab2371320ae10cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_59
+    second: {fileID: 2100000, guid: 8b4db4d7e0a8e6c4899e51b6f05667fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_6
+    second: {fileID: 2100000, guid: 12eb03309e59afe47b25e35f92a0a9a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_60
+    second: {fileID: 2100000, guid: 2e252f867e9782c4997abfef5a1b0b3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_7
+    second: {fileID: 2100000, guid: 5265b9d0fb59f314c8de3be964a0afd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_8
+    second: {fileID: 2100000, guid: 80714295f4e7da943b65a6f020d64190, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cropped_textured_mesh_9
+    second: {fileID: 2100000, guid: d273598dc2e686e4e9295f53a703285e, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

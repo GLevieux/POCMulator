@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AvionSounds : MonoBehaviour
 {
-
-
     enum EtatAcceleration
     {
         STOPPED,
@@ -22,6 +20,7 @@ public class AvionSounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -39,7 +38,7 @@ public class AvionSounds : MonoBehaviour
 
         }
 
-        if (Input.GetButton("LeftEngineThrusterIncrease") || Input.GetButton("RightEngineThrusterIncrease"))
+        if (Input.GetButton("LeftEngineThrusterIncrease") || Input.GetButton("RightEngineThrusterIncrease") || Input.GetButton("VerticalThrusterIncrease") || Input.GetButton("VerticalThrusterDecrease"))
         {
             
             if (etatAcceleration == EtatAcceleration.STOPPED)
@@ -56,11 +55,16 @@ public class AvionSounds : MonoBehaviour
 
             etatAcceleration = EtatAcceleration.STOPPED;
         }
-
+        /*
         if (Input.GetButton("VerticalThrusterIncrease") || Input.GetButton("VerticalThrusterIncrease"))
         {
-            audioSourceLift.Play();
-            audioSourceLift.loop = false;
-        }
+            if (etatAcceleration == EtatAcceleration.STOPPED)
+            {
+                audioSourceLift.Play();
+                audioSourceLift.loop = false;
+                etatAcceleration = EtatAcceleration.STARTING;
+            }
+
+        }*/
     }
 }
