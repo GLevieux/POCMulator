@@ -12,9 +12,6 @@ public class Avion : MonoBehaviour
     [SerializeField] private GameObject leftEngineCamera;
     [SerializeField] private GameObject rightEngineCamera;
     [SerializeField] private GameObject verticalEngineCamera;
-    [SerializeField] private Slider leftEngineThruster;
-    [SerializeField] private Slider rightEngineThruster;
-    [SerializeField] private Slider verticalEngineThruster;
     [SerializeField] private float maxThrust;
     [SerializeField] private float minVelocityLiftForce;
     [SerializeField] private float maxLiftForce;
@@ -23,16 +20,17 @@ public class Avion : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     private Rigidbody thisRigidbody;
+    private UIManager uiManager;
 
     private Vector2 rotationInput;
     private float currentLeftEngineThrust;
     private float currentRightEngineThrust;
     private float currentVerticalEngineThrust;
-    private float currentLiftForce;
 
     private void Start()
     {
         thisRigidbody = GetComponent<Rigidbody>();
+        uiManager = GetComponentInChildren<UIManager>();
         cockpitCamera.SetActive(true);
         leftEngineCamera.SetActive(false);
         rightEngineCamera.SetActive(false);
@@ -42,7 +40,6 @@ public class Avion : MonoBehaviour
         currentLeftEngineThrust = 0;
         currentRightEngineThrust = 0;
         currentVerticalEngineThrust = 0;
-        currentLiftForce = 0;
     }
 
     private void Update()
@@ -51,21 +48,25 @@ public class Avion : MonoBehaviour
         rotationInput.y = Input.GetAxis("Vertical");
 
         if (Input.GetButton("LeftEngineThrusterIncrease"))
-            leftEngineThruster.value += thrusterIncreaseSpeed * Time.deltaTime;
+            currentLeftEngineThrust += thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("RightEngineThrusterIncrease"))
-            rightEngineThruster.value += thrusterIncreaseSpeed * Time.deltaTime;
+            currentRightEngineThrust += thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("LeftEngineThrusterDecrease"))
-            leftEngineThruster.value -= thrusterIncreaseSpeed * Time.deltaTime;
+            currentLeftEngineThrust -= thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("RightEngineThrusterDecrease"))
-            rightEngineThruster.value -= thrusterIncreaseSpeed * Time.deltaTime;
+            currentRightEngineThrust -= thrusterIncreaseSpeed * Time.deltaTime;
 
         if (Input.GetButton("LiftThruster"))
-            verticalEngineThruster.value += verticalThrusterChangeSpeed * Time.deltaTime;
+            currentVerticalEngineThrust += verticalThrusterChangeSpeed * Time.deltaTime;
         else
-            verticalEngineThruster.value -= verticalThrusterChangeSpeed * Time.deltaTime;
+            currentVerticalEngineThrust -= verticalThrusterChangeSpeed * Time.deltaTime;
+
+        uiManager.UpdateLeftEngineThruster(currentLeftEngineThrust);
+        uiManager.UpdateRightEngineThruster(currentRightEngineThrust);
+        uiManager.UpdateVerticalThruster(currentVerticalEngineThrust);
 
         if (Input.GetButtonDown("CockpitCamera"))
         {
@@ -118,20 +119,5 @@ public class Avion : MonoBehaviour
     private void UpdateUI()
     {
         
-    }
-
-    public void SetLeftEngineThrust(float value)
-    {
-        currentLeftEngineThrust = value;
-    }
-
-    public void SetRightEngineThrust(float value)
-    {
-        currentRightEngineThrust = value;
-    }
-
-    public void SetVerticalEngineThrust(float value)
-    {
-        currentVerticalEngineThrust = value;
     }
 }
