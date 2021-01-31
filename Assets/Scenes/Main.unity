@@ -490,7 +490,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1743747994, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
   m_PrefabInstance: {fileID: 1328883844}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1209853318
+--- !u!82 &1209853320 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1743747997, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+  m_PrefabInstance: {fileID: 1328883844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1209853321
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -706,7 +711,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 36025648, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 239436431, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_AnchorMax.x
@@ -785,9 +790,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743747996, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: audioSourceRun
+      value: 
+      objectReference: {fileID: 1209853321}
+    - target: {fileID: 1743747996, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: volumeThrusters
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1743747996, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: audioSourceStart
+      value: 
+      objectReference: {fileID: 1209853320}
     - target: {fileID: 1743747997, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_audioClip
       value: 
