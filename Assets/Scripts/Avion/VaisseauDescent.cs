@@ -115,6 +115,9 @@ public class VaisseauDescent : MonoBehaviour
                 }
             }
 
+            if (noseInput.magnitude > 1)
+                noseInput = noseInput.normalized * 1.5f;
+
             thisRigidbody.AddTorque(transform.up * nosePower * 30 * thisRigidbody.mass * noseInput.x);
             thisRigidbody.AddTorque(-transform.right * nosePower * 30 * thisRigidbody.mass * noseInput.y);
             noseInput = Vector2.zero;
