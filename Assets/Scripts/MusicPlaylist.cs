@@ -41,7 +41,7 @@ public class MusicPlaylist : MonoBehaviour
 
         //start with first music in the list
         GetComponent<AudioSource>().clip = myMusic[0];
-        GetComponent<AudioSource>().loop = true;
+        GetComponent<AudioSource>().loop = false;
         GetComponent<AudioSource>().Play();
 
         mainVolume = GetComponent<AudioSource>().volume;
@@ -108,6 +108,7 @@ public class MusicPlaylist : MonoBehaviour
 
         if (musicStopped && Input.GetKeyDown(KeyCode.B))
         {
+            playerWantsMusic = true;
             currentSong++;
 
             if (currentSong >= myMusic.Length)
