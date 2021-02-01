@@ -970,6 +970,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c887749b108c4134caf153dc37178029, type: 3}
+--- !u!1 &1092576750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 263203887518977358, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+  m_PrefabInstance: {fileID: 1328883844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1092576757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092576750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b58a994556aa943ba26b23f42d5b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePower: 1
+  nosePower: 1
+  dragNoBreak: 0.1
+  dragAutoBreak: 0.8
+  maxSpeed: 500
+  maxAngularSpeed: 0.7
 --- !u!1 &1209853317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1743747994, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
@@ -1508,6 +1531,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 263203887518977346, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203887518977346, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: maxThrust
       value: 20000
       objectReference: {fileID: 0}
@@ -1521,7 +1548,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 263203887518977347, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_Drag
-      value: 0.8
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203887518977347, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203887518977347, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203887518977347, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203887518977347, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 263203887518977347, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 263203887518977358, guid: c0733789c9853874dbd289efa4bc4e57, type: 3}
       propertyPath: m_Name

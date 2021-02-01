@@ -22,10 +22,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text gameName;
     [SerializeField] private Text songName;
 
+    public bool CursorLocked = false;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        CursorLocked = true;
 
         StartCoroutine(ShowTitle());
     }
