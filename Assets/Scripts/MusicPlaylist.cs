@@ -108,6 +108,7 @@ public class MusicPlaylist : MonoBehaviour
 
         if (musicStopped && Input.GetKeyDown(KeyCode.B))
         {
+            playerWantsMusic = true;
             currentSong++;
 
             if (currentSong >= myMusic.Length)
