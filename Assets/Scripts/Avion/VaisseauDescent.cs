@@ -202,8 +202,8 @@ public class VaisseauDescent : MonoBehaviour
             {
                 if(moveForces < float.Epsilon)
                 {
-                    thisRigidbody.angularDrag = 10;
-                    thisRigidbody.drag = 10;
+                    thisRigidbody.angularDrag = 3;
+                    thisRigidbody.drag = 3;
                 }
             }
 
