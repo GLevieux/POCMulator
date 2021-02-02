@@ -15,6 +15,7 @@ public class VaisseauDescent : MonoBehaviour
     private KeyCode kRightPerp = KeyCode.Q;
     private KeyCode kBottom = KeyCode.E;
     private KeyCode kUp = KeyCode.A;
+    private KeyCode kBurst = KeyCode.LeftShift;
 
     private float forceBack = 0;
     private float forceFront = 0;
@@ -38,6 +39,7 @@ public class VaisseauDescent : MonoBehaviour
     public float dragAutoBreak = 0.8f;
 
     public float maxSpeed = 500;
+    private float realMaxSpeed = 500;
     public float maxAngularSpeed = 0.7f;
 
     Vector2 noseInput;
@@ -88,8 +90,15 @@ public class VaisseauDescent : MonoBehaviour
 
     public void FixedUpdate()
     {
+        float forwardPush = Input.GetKey(kBurst) ? 800 : 500;
+        float speed = thisRigidbody.velocity.magnitude;
+        if (Input.GetKey(kBurst))
+            realMaxSpeed = Mathf.Min(maxSpeed * 1.5f, realMaxSpeed + Time.deltaTime * 500);
+        else
+            realMaxSpeed = Mathf.Max(maxSpeed, realMaxSpeed - Time.deltaTime * 500);
+
         //Deplacement
-        thisRigidbody.AddForce(forceBack * transform.forward * movePower * 500 * thisRigidbody.mass);
+        thisRigidbody.AddForce(forceBack * transform.forward * movePower * forwardPush * thisRigidbody.mass);
         thisRigidbody.AddForce(-forceFront * transform.forward * movePower * 200 * thisRigidbody.mass);
         thisRigidbody.AddForce(forceLeftPerp * transform.right * movePower * 200 * thisRigidbody.mass);
         thisRigidbody.AddForce(-forceRightPerp * transform.right * movePower * 200 * thisRigidbody.mass);
@@ -143,11 +152,11 @@ public class VaisseauDescent : MonoBehaviour
         }
 
         //Limit
-        float speed = thisRigidbody.velocity.magnitude;
-        if (speed > maxSpeed)
+        
+        if (speed > realMaxSpeed)
         {
-            thisRigidbody.velocity = thisRigidbody.velocity.normalized * maxSpeed;
-            speed = maxSpeed;
+            thisRigidbody.velocity = thisRigidbody.velocity.normalized * realMaxSpeed;
+            speed = realMaxSpeed;
         }
 
         if (thisRigidbody.angularVelocity.sqrMagnitude > maxAngularSpeed * maxAngularSpeed)
@@ -185,7 +194,7 @@ public class VaisseauDescent : MonoBehaviour
             RaycastHit hitInfoOneSec = new RaycastHit();
             Physics.SphereCast(new Ray(transform.position + thisRigidbody.velocity, -transform.up), 2.0f, out hitInfoOneSec);
             float distToGroundInOneSec = Mathf.Max(0, hitInfoOneSec.distance - distanceToColliderBottom);
-            float distAutoAvoid = 100;
+            float distAutoAvoid = 150;
             float mindDistGround = Mathf.Min(distToGround, distToGroundInOneSec);
             if (mindDistGround < distAutoAvoid && speedTowardSurface > 0)
             {                
@@ -207,32 +216,33 @@ public class VaisseauDescent : MonoBehaviour
                 }
             }
 
-            Debug.Log(distToGround + " : align = " + align + " autoavoid = " + breaking + " normvar = " + normVariability);
+            Debug.Log(distToGround + " : align = " + align + " autoavoid = " + breaking + " normvar = " + normVariability + " maxSpeed = "+ realMaxSpeed);
         }
     }
 
     private bool GetMeanGroundNormal(out Vector3 normal, out float variability)
     {
         float steps = 2;
-        float angleScan = 120;
-        float angleStep = angleScan / (steps*2);
+        float largeurScan = 30;
+        float scanStep = largeurScan / (steps*2);
         variability = 0;
 
         RaycastHit hitinfo = new RaycastHit();
         normal = Vector3.zero;
-        Vector3 prevNormal = Vector3.zero;
         float nbNorm = 0;
         for (float x = -steps ; x <= steps ; x++)
         {
             for (float y = -steps ; y <= steps ; y++)
             {
-                Vector3 dir = Quaternion.AngleAxis(x * angleStep, transform.right) * -transform.up;
-                dir = Quaternion.AngleAxis(y * angleStep, transform.forward) * dir;
-                //Debug.DrawLine(transform.position, transform.position + dir * 5, Color.gray);
+                Vector3 startPos = transform.position + transform.right * x * scanStep;
+                startPos += transform.forward * y * scanStep;
+                
+                Debug.DrawLine(startPos, startPos  - transform.up * 5, Color.gray);
 
-                if (Physics.SphereCast(new Ray(transform.position, dir), 2.0f, out hitinfo))
+                if (Physics.SphereCast(new Ray(startPos, -transform.up), 2.0f, out hitinfo))
                 {
-                    variability += 1-Vector3.Dot(normal.normalized, hitinfo.normal);
+                    if (normal.sqrMagnitude > float.Epsilon)
+                        variability += 1-Vector3.Dot(normal.normalized, hitinfo.normal);
                     normal += hitinfo.normal;
                     nbNorm++;
                 }
