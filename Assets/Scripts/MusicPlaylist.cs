@@ -6,14 +6,24 @@ public class MusicPlaylist : MonoBehaviour
 {
     public AudioClip[] myMusic;
     AudioClip[] playedMusic;
+    enum EtatPlaylist
+    {
+        PLAYING,
+        STARTING,
+        STOPPING,
+        STOPPED,
+        CHANGING,
+        CHANGED
+    };
 
-    bool playerWantsMusic = true;
+    private EtatPlaylist etatPlaylist;
+
     bool loopActivated = false;
-    bool musicStopped = false;
 
     public float fadeDuration = 1.0f;
-    public float fadeTime;
+    float fadeTime;
     float mainVolume;
+
     int currentSong = 0;
 
     void reshuffle(AudioClip[] myMusic)
@@ -38,21 +48,27 @@ public class MusicPlaylist : MonoBehaviour
     void Start()
     {
         reshuffle(myMusic);
-
-        //start with first music in the list
-        GetComponent<AudioSource>().clip = myMusic[0];
-        GetComponent<AudioSource>().loop = false;
-        GetComponent<AudioSource>().Play();
+        
+        GetComponent<AudioSource>().clip = myMusic[0]; //start with first music in the list
 
         mainVolume = GetComponent<AudioSource>().volume;
+        fadeTime = fadeDuration;
+
+        GetComponent<AudioSource>().volume = 0; //useful for the opening fade in
+        GetComponent<AudioSource>().loop = false;
+
+        GetComponent<AudioSource>().Play();
 
         GetNameOfCurrentSong();
+
+        etatPlaylist = EtatPlaylist.STARTING;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<AudioSource>().isPlaying && playerWantsMusic == true)
+        //music stopped, autoplay is activated by default
+        if (etatPlaylist == EtatPlaylist.PLAYING && !GetComponent<AudioSource>().isPlaying)
         {
             currentSong++;
 
@@ -62,36 +78,21 @@ public class MusicPlaylist : MonoBehaviour
             }
 
             GetComponent<AudioSource>().clip = myMusic[currentSong];
+
             GetComponent<AudioSource>().loop = false;
+
             GetComponent<AudioSource>().Play();
+            
         }
-        
+
         //select next music in playlist
-        if (GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N))
         {
-            GetComponent<AudioSource>().Stop();
-            currentSong++;
-
-            if (currentSong >= myMusic.Length)
-            {
-                currentSong = 0;
-            }
-
-            GetComponent<AudioSource>().clip = myMusic[currentSong];
-            GetComponent<AudioSource>().loop = false;
-            GetComponent<AudioSource>().Play();
-
-            GetNameOfCurrentSong();
+            fadeTime = fadeDuration; 
+            etatPlaylist = EtatPlaylist.CHANGING;
         }
 
-        //stop radio
-        if (GetComponent<AudioSource>().isPlaying && Input.GetKeyDown(KeyCode.B))
-        {
-            playerWantsMusic = false;
-            fadeTime = fadeDuration;
-        }
-
-        if (playerWantsMusic == false && fadeTime > 0)
+        if (etatPlaylist == EtatPlaylist.CHANGING && fadeTime > 0)
         {
             fadeTime -= Time.deltaTime;
             GetComponent<AudioSource>().volume = fadeTime / fadeDuration;
@@ -99,36 +100,75 @@ public class MusicPlaylist : MonoBehaviour
             if (fadeTime <= 0)
             {
                 GetComponent<AudioSource>().Stop();
-                GetComponent<AudioSource>().volume = 0;
 
-                musicStopped = true;
-            }
-                    
+                currentSong++;
+
+                if (currentSong >= myMusic.Length)
+                {
+                    currentSong = 0;
+                }
+
+                GetComponent<AudioSource>().clip = myMusic[currentSong];
+                GetComponent<AudioSource>().loop = false;
+
+                etatPlaylist = EtatPlaylist.CHANGED;
+            }        
         }
 
-        if (musicStopped && Input.GetKeyDown(KeyCode.B))
+        if (etatPlaylist == EtatPlaylist.CHANGED)
         {
-            playerWantsMusic = true;
-            currentSong++;
-
-            if (currentSong >= myMusic.Length)
+            if (GetComponent<AudioSource>().volume >= 0)
             {
-                currentSong = 0;
+                GetComponent<AudioSource>().volume += Time.deltaTime;
             }
 
-            GetComponent<AudioSource>().clip = myMusic[currentSong];
-            GetComponent<AudioSource>().loop = false;
-            GetComponent<AudioSource>().Play();
+            if (GetComponent<AudioSource>().volume == 1)
+            {
+                GetComponent<AudioSource>().Play();
 
-            musicStopped = false;
+                GetNameOfCurrentSong();
 
-            GetNameOfCurrentSong();
+                etatPlaylist = EtatPlaylist.PLAYING;
+            } 
         }
 
-        if (!musicStopped && GetComponent<AudioSource>().volume < mainVolume)
+        //stop playing music
+        if (Input.GetKeyDown(KeyCode.B) && etatPlaylist == EtatPlaylist.PLAYING)
         {
-            GetComponent<AudioSource>().volume += Time.deltaTime; //fade in de la musique
+            fadeTime = fadeDuration;
+            etatPlaylist = EtatPlaylist.STOPPING;
+        }
 
+        //fade out music
+        if (etatPlaylist == EtatPlaylist.STOPPING && fadeTime > 0)
+        {
+            fadeTime -= Time.deltaTime;
+            GetComponent<AudioSource>().volume = fadeTime / fadeDuration;
+
+            if (fadeTime <= 0)
+            {
+                GetComponent<AudioSource>().Stop();
+
+                etatPlaylist = EtatPlaylist.STOPPED;
+            }
+        }
+
+        //restart playing music
+        if (Input.GetKeyDown(KeyCode.B) && etatPlaylist == EtatPlaylist.STOPPED)
+        {
+            if (GetComponent<AudioSource>().volume == 0)
+                GetComponent<AudioSource>().Play();
+
+            etatPlaylist = EtatPlaylist.STARTING;
+        }
+
+        //fade in music
+        if (etatPlaylist == EtatPlaylist.STARTING && GetComponent<AudioSource>().volume >= 0)
+        {
+            GetComponent<AudioSource>().volume += Time.deltaTime;
+
+            if (GetComponent<AudioSource>().volume == 1)
+                etatPlaylist = EtatPlaylist.PLAYING;   
         }
 
         //active loop music
@@ -145,11 +185,7 @@ public class MusicPlaylist : MonoBehaviour
                 GetComponent<AudioSource>().loop = false;
                 loopActivated = false;
                 Debug.Log("on a désactivé la loop");
-            }
-            
+            } 
         }
-
     }
-
-
 }
