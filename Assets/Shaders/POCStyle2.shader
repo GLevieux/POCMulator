@@ -81,9 +81,18 @@ Shader "Unlit/POCStyle2"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.objPos = v.vertex; 
                 float norm = _ScreenStepScaleFactor + o.vertex.w* _ScreenStepDepth;
+
+                float4 wPos = mul(unity_ObjectToWorld, v.vertex);
+                float distToCam = length(mul(UNITY_MATRIX_V, wPos));
+                
+                //ON veut pas modif ceux qui sont pret, quand on marche
+                float distToCamNorm = clamp(distToCam / 100, 0, 1);
+
+
                 o.colOut = float4(abs(o.vertex.z/norm), 0, 0, 1);
-                o.vertex.x = stepVal(o.vertex.x/ norm, _ScreenStep )* norm;
-                o.vertex.y = stepVal(o.vertex.y/ norm, _ScreenStep )* norm;
+
+                o.vertex.x = lerp(o.vertex.x, stepVal(o.vertex.x / norm, _ScreenStep) * norm, distToCamNorm);
+                o.vertex.y = lerp(o.vertex.y, stepVal(o.vertex.y/ norm, _ScreenStep ) * norm, distToCamNorm);
                 o.uv = TRANSFORM_TEX(v.uv, _BaseMap);
                 /*float4 col = tex2Dlod(_BaseMap, float4(v.uv,0,0));
 
