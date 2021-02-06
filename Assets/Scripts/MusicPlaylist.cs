@@ -6,7 +6,7 @@ public class MusicPlaylist : MonoBehaviour
 {
     public AudioClip[] myMusic;
     AudioClip[] playedMusic;
-    enum EtatPlaylist
+    public enum EtatPlaylist
     {
         PLAYING,
         STARTING,
@@ -16,7 +16,7 @@ public class MusicPlaylist : MonoBehaviour
         CHANGED
     };
 
-    private EtatPlaylist etatPlaylist;
+    public static EtatPlaylist etatPlaylist;
 
     bool loopActivated = false;
 
