@@ -96,7 +96,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DayLerp: 0.7631608
+    - _DayLerp: 0.25003996
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -114,15 +114,15 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SunDir: 0.2
-    - _SunSize: 0.799997
+    - _SunSize: 0.62389535
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDay: {r: 0.019888723, g: 0.98617876, b: 0.7035529, a: 1}
+    - _ColorDay: {r: 0.6405725, g: 0.45308486, b: 0.5170287, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SunDir: {r: -0.75985324, g: -0.16309829, b: 0.11421237, a: 0}
+    - _SunDir: {r: -0.5684827, g: 0.19072793, b: -0.08918688, a: 0}
   m_BuildTextureStacks: []
